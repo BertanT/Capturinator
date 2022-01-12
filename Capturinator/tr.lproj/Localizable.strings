@@ -1,0 +1,261 @@
+/* Button: Shows the about this app window */
+"AboutMenuCommandTtitle" = "Capturinator Hakkında";
+
+/* Short description of the app */
+"AboutWindowText" = "Fotoğraflar ile 3D Modeller Oluşturun!";
+
+/* Short app info under the welcome text in the sidebar */
+"AppInfo" = "Objelerin fotoğraflarını anında AR projeleri ve fazlası için kullanabileceğiniz 3D USDZ modellere dönüştürün! Başlamak için bir fotoğraf klasörü seçin.";
+
+/* General purpose cancel button */
+"Cancel" = "Vazgeç";
+
+/* Chnages the selected image folder */
+"Change" = "Değiştir";
+
+/* Button: Closes window */
+"Close" = "Kapat";
+
+/* Body of the window closing confirmation dialog */
+"CloseWindowAlertBody" = "Bu pencere içinde devam eden bütün işlemler durdurulacak ve bütün değişiklikler kaybolacaktır.";
+
+/* Title of the window closing confirmation dialog */
+"CloseWindowAlertTitle" = "Bu pencere kapatılsın mı?";
+
+/* Onboarding screen subtitle */
+"Create" = "Model Oluşturun!";
+
+/* Onboarding screen text under create */
+"CreateBody" = "Ayarları özelleştirin, modeli önizleyin ve dışarı aktarın! Seçeneklerden herhangi birisi ile ilgili yardıma ihtiyacınız olursa yanında bulunan soru işareti sembolüne tıklayarak yadım alabilirsiniz.";
+
+/* Creates a preview model */
+"CreatePreview" = "Önizleme Oluştur";
+
+/* Text: Shows model creation progress in progress bar */
+"CreatingModel %lld" = "Model Oluşturuluyor: %%%lld";
+
+/* Default filename while saving the model */
+"DefaultExportFilename" = "Modelim";
+
+/* Button: Hides the progress bar before it automatically hides after successful export */
+"Dismiss" = "Gizle";
+
+/* Title for generic error alert */
+"ErrorAlertTitle" = "Bir Şeyler Ters Gitti";
+
+/* Text: Shown in progress bar after a model has been succesfully exported */
+"ExportComplete %@" = "%@ başarılı bir şekilde dışarı aktarıldı!";
+
+/* Button: Creates and exports model */
+"ExportModel" = "Dışarı Aktar";
+
+/* Full model quality */
+"Full" = "Yüksek";
+
+/* Button: Shows the onboarding screen */
+"GettingStartedMenuCommandTittle" = "Başlangıç Klavuzu";
+
+/* Toggle: Sets high feature sensitivity option */
+"HighFeatureSensitivity" = "Yüksek Detay Hassasiyeti";
+
+/* Help popover body for high feature sensitivity */
+"HighFeatureSensitivityHelpBody" = "Eğer kaynak fotoğraflarınız odak dışı vaya düşük kontrasta sahipse, ya da taramak istediğiniz obje tek renkli veya az yüzey detayına sahipse bu özelliği etkinleştirmelisiniz. İşlem süresi artacaktır, ancak bu özellik daha iyi sonuçlar elde etmenizi sağlar.";
+
+/* Help popover title for high feature sensitivity */
+"HighFeatureSensitivityHelpTitle" = "Yüksek Detay Hassasiyeti Hakkında";
+
+/* Toggle[TouchBar]: Sets high feature sensitivity option */
+"HighFeatureSensitivityShortened" = "Yük. Detay Hassasiyeti";
+
+/* Image folder title in the sidebar */
+"ImageFolder" = "Fotoğraf Klasörü";
+
+/* Help popover body for image folder */
+"ImageFolderHelpBody" = "Bu klasör 3D modele çevirmek istediğiniz fotoğrafları içermelidir.";
+
+/* Help popover title for image folder */
+"ImageFolderHelpTitle" = "Fotoğraf Klasörü Hakkında";
+
+/* Onboarding screen subtitle */
+"ImportPhotos" = "Fotoğrafları İçe Aktarın";
+
+/* Onboarding screen text under import photos */
+"ImportPhotosBody" = "Çektiğiniz bütün fotoğrafları bir klasöre taşıyın ve Capturinator'a aktarın. Bu klasör fotoğraflarınızdan başka hiçbir dosya içermemelidir.";
+
+/* Starting model creation */
+"Initializing" = "Başlatılıyor...";
+
+/* Message to be displayed at about this app window and onboarding screen */
+"MadeWithLove" = "Bertan tarafından ❤️ ve tutku ile yapıldı.";
+
+/* Medium model quality */
+"Medium" = "Orta";
+
+/* Alert body for model creation error */
+"ModelCreationErrorAlertBody" = "Model oluşturulurken bir sorun meydana geldi. Lütfen kaynak görsellerinizin geçerli olduğundan emin olun!";
+
+/* Notification body for model export failure */
+"ModelExportFailureNotificationBody %@" = "\"%@\" Dışarı aktarılırken bir sorun meydana geldi.";
+
+/* Notification title for model export failure */
+"ModelExportFailureNotificationTitle" = "❌ Model Dışarı Aktarılamadı";
+
+/* Notification body for model export success */
+"ModelExportSucessNotificationBody %@" = "\"%@\" Başarılı bir şekilde dışarı aktarıldı.";
+
+/* Notification title for model export success */
+"ModelExportSucessNotificationTitle" = "😄 Model Dışarı Aktarıldı!";
+
+/* Picker: Sets the model quality */
+"ModelQuality" = "Model Kalitesi";
+
+/* Help popover title for model quality */
+"ModelQualityHelpBody" = "Modelinizin kalitesini ve detaylılığını seçin. Unutmayın ki kalite yükseldikçe modelinizin kapladığı disk alanı ve işlem süresi de artar.";
+
+/* Help popover title for model quality */
+"ModelQualityHelpTitle" = "Model Kalitesi Hakkında";
+
+/* Alert body for model save */
+"ModelSaveErrorAlertBody" = "Model kaydedilirken bir sorun oluştu.";
+
+/* Model Settings title in the sidebar */
+"ModelSettings" = "Model Ayarları";
+
+/* Label: Viewed as a placeholder when there is no model in the model viewer */
+"NoModelToViewMessage" = "Burada görüntülemek için bir önizleme oluşturun ya da dışarı model aktarın!";
+
+/* Alert body for no source folder found error */
+"NoSourceFolderErrorAlertBody" = "Kaynak klasörü bulunamadı - bu bir yazılım hatası olabilir.";
+
+/* Image folder name placeholder when not selected */
+"NotSelected" = "Seçilmedi";
+
+/* Label: Shown in the main window if the user's devie does not support Object Capture, more info about compatibility issue. */
+"ObjectCaptureNotSupportedDescription" = "Bu uygulamayı kullanabilmek için Apple Silicon işlemciye ya da Intel işlemciye ve \"yüksek güçlü\" bir grafik işlemcisine sahip bir Mac bilgisayarına ihtiyacınız var. [Daha fazla bilgi...](http://www.capturinator.bertan.codes/support/system-requirements)";
+
+/* Label: Shown in the main window if the user's devie does not support Object Capture. */
+"ObjectCaptureNotSupportedTitle" = "Maalesef cihazınız Object Capture teknolojisini desteklemiyor";
+
+/* Toggle: Sets Object masking option */
+"ObjectMasking" = "Obje Maskeleme";
+
+/* Help popover body for object masking */
+"ObjectMaskingHelpBody" = "Obje maskeleme, daha kaliteli bir model oluşturmak ve performansı artırmak için görsellerden taramak istediğiniz obje dışındaki alakasız nesneleri (bitkiler, binalar vb.) filtrelemeye çalışır. Arka planın filtrelenmesini istemiyorsanız bu özelliği kapatın.";
+
+/* Help popover title for object masking */
+"ObjectMaskingHelpTitle" = "Obje Maskeleme Hakkında";
+
+/* Text: Greets the user for the first time on the onboarding screen */
+"OnboardingWelcome" = "Capturinator'a Hoşgeldiniz!";
+
+/* Button: Opens image folder */
+"Open" = "Aç";
+
+/* Button[TouchBar]: Opens image folder */
+"OpenFolder" = "Klasör Aç";
+
+/* Onboarding screen subtitle */
+"OpenSource" = "Açık Kaynaklı";
+
+/* Onboarding screen text under open source */
+"OpenSourceBody" = "Bu uygulama MIT lisansı kapsamında açık kaynaklıdır. Ben derin bir teknoloji tutkusuna sahip 16 yaşındaki bir geliştiriciyim. [GitHub profilim](http://github.com/bertant) üzerinden projelerime göz atabilir, ve katkıda bulanabilirsiniz. Uygulamayı kullandığınız için teşekkürler!";
+
+/* Button[TouchBar]: Creates a preview model */
+"Preview" = "Önizleme";
+
+/* Notification body for preview creation failure */
+"PreviewCreationFailureNotificationBody %@" = "\"%@\" kaynak klasörü için önizleme oluşturulurken bir sorun meydana geldi.";
+
+/* Notification title for preview creation failure */
+"PreviewCreationFailureNotificationTitle" = "❌ Önizleme Oluşturulamadı";
+
+/* Notification body for preview creation success */
+"PreviewCreationSuccessNotificationBody %@" = "\"%@\" kaynak klasörü için başarılı bir şekilde önizleme oluşturuldu.";
+
+/* Notification title for preview creation success */
+"PreviewCreationSuccessNotificationTitle" = "😄 Önizleme Hazır!";
+
+/* Alert body for photogrammetry session creation error */
+"PSCreationErrorAlertBody" = "Fotogrametri başlatılırken bir hata oluştu. Lütfen kaynak fotoğraflarınızın geçerli olduğundan emin olun!";
+
+/* Button[TouchBar]: Shows Model Quality Picker Strip */
+"Quality" = "Kalite";
+
+/* Button: Quits app */
+"Quit" = "Çık";
+
+/* Body of the app termination confirmation dialog */
+"QuitAppAlertBody" = "Devam eden bütün işlemler durdurulacak ve bütün ilerleme kaybolacaktır.";
+
+/* Title of the app termination confirmation dialog */
+"QuitAppAlertTitle" = "Şimdi çıkmak istiyor musunuz?";
+
+/* RAW model quality */
+"RAW" = "RAW!";
+
+/* The lowest model quality */
+"Reduced" = "Azaltılmış";
+
+/* Refines a preview model */
+"RefinePreview" = "Önizlemeyi Güncelle";
+
+/* Rendering title in the sidebar */
+"Rendering" = "Model Oluşturma";
+
+/* Title for the save panel shown before exporting model */
+"SavePanelTitle" = "Modelinizi Nereye Kaydedeceğinizi Seçin";
+
+/* Text: Shown in progress bar while saving a finished model */
+"SavingModel" = "Model Kaydediliyor...";
+
+/* Toggle: Sets Sequential samples option */
+"SequentialSamples" = "Ardışık Görseller";
+
+/* Help popover body for sequential samples */
+"SequentialSamplesHelpBody" = "Eğer görseller fotoğraflandıkları sırayla sağlanıyorsa performansı artırmak için bu özelliği etkinleştirin. Fotoğraflar belirli bir sırada sağlanmıyorsa bu özelliği kapatın.";
+
+/* Help popover title for sequential samples */
+"SequentialSamplesHelpTitle" = "Ardışık Görseller Hakkında";
+
+/* Button[TouchBar]: Shows Model Settings Strip */
+"Settings" = "Ayarlar";
+
+/* Button: Shows the exported model in Finder */
+"ShowInFinder" = "Finder'da Göster";
+
+/* Button: Dismisses the onboarding screen */
+"StartCreating" = "Başla!";
+
+/* Stop model creation */
+"Stop" = "Durdur";
+
+/* Button[Progress Bar]: Stops model creation */
+"StopCreating" = "Modellemeyi Durdur";
+
+/* Body for the stop model creation confirmation dialog */
+"StopCreatingModelAlertBody" = "Modellemeyi durdurmak istediğinize emin misiniz? Bütün ilerleme kaybolacaktır.";
+
+/* Title for the stop model creation confirmation dialog */
+"StopCreatingModelAlertTitle" = "Modelleme durdurulsun mu?";
+
+/* Menu Command: Opens the Capturinator Support Website */
+"SupportMenuCommandTitle" = "Capturinator Destek";
+
+/* Onboarding screen subtitle */
+"TakePhotos" = "Fotoğraf Çekin";
+
+/* Onboarding screen text under take photos */
+"TakePhotosBody" = "Taramak istediğiniz objenin bütün açılardan birbiriyle kesişen 30-200 adet fotoğrafını çekin - altı ve üstü de dahil. Tercihen derinlik algılayabilen kamerası olan bir iPhone ya da yüksek kaliteli bir DSLR fotoğraf makinesi kullanın.";
+
+/* Button: Toggles Sidebar */
+"ToggleSidebar" = "Kenar Çubuğunu Gizle/Göster";
+
+/* Alert body for unexpected fatal session error */
+"UnexpectedFatalSessionErrorAlertBody" = "Fotogrametri ile ilgili beklenmeyen bir kritik sorun oluştu. :{";
+
+/* Alert body for unexpected model creation error */
+"UnexpectedModelCreationErrorAlertBody" = "Model yaratılırken beklenmeyen bir sorun oluştu.";
+
+/* Welcome text at the top of the sidebar */
+"Welcome" = "Merhaba!";
+

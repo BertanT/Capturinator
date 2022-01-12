@@ -1,0 +1,219 @@
+/* Button: Shows the about this app window */
+"AboutMenuCommandTtitle" = "About Capturinator";
+
+/* Short description of the app */
+"AboutWindowText" = "Create 3D Models With Photos!";
+
+/* Short app info under the welcome text in the sidebar */
+"AppInfo" = "Instantly turn photos of objects into 3D USDZ models for your AR projects and more! Select an image folder to get started.";
+
+/* Body of the window closing confirmation dialog */
+"CloseWindowAlertBody" = "Any currently running operations will stop, and all changes made in this window will be lost.";
+
+/* Title of the window closing confirmation dialog */
+"CloseWindowAlertTitle" = "Close This Window?";
+
+/* Onboarding screen subtitle */
+"Create" = "Create!";
+
+/* Onboarding screen text under create */
+"CreateBody" = "Tweak the settings, preview, and create your model! If you need help with any of the functions, click the question mark symbol next to them to get help.";
+
+/* Creates a preview model */
+"CreatePreview" = "Create Preview";
+
+/* Text: Shows model creation progress in progress bar */
+"CreatingModel %lld" = "Creating Model: %lld%%";
+
+/* Default filename while saving the model */
+"DefaultExportFilename" = "My Model";
+
+/* Title for generic error alert */
+"ErrorAlertTitle" = "Something Went Wrong";
+
+/* Text: Shown in progress bar after a model has been succesfully exported */
+"ExportComplete %@" = "Sucessfully exported model: %@";
+
+/* Button: Creates and exports model */
+"ExportModel" = "Export Model";
+
+/* Button: Shows the onboarding screen */
+"GettingStartedMenuCommandTittle" = "Getting Started Guide";
+
+/* Toggle: Sets high feature sensitivity option */
+"HighFeatureSensitivity" = "High Feature Sensitivity";
+
+/* Help popover body for high feature sensitivity */
+"HighFeatureSensitivityHelpBody" = "You should turn high feature sensitivity on if the sample images are out of focus or have low contrast and if the object is single-color or doesn’t have much texture. Though it may take longer to process, it’ll produce a better result.";
+
+/* Help popover title for high feature sensitivity */
+"HighFeatureSensitivityHelpTitle" = "About High Feature Sensitivity";
+
+/* Toggle[TouchBar]: Sets high feature sensitivity option */
+"HighFeatureSensitivityShortened" = "High Feature Sensitivity";
+
+/* Image folder title in the sidebar */
+"ImageFolder" = "Image Folder";
+
+/* Help popover body for image folder */
+"ImageFolderHelpBody" = "This folder should contain the sample images from which you want to create the 3D model.";
+
+/* Help popover title for image folder */
+"ImageFolderHelpTitle" = "About Image Folder";
+
+/* Onboarding screen subtitle */
+"ImportPhotos" = "Import Photos";
+
+/* Onboarding screen text under import photos */
+"ImportPhotosBody" = "Put all the photos you took in a folder and import the folder into Capturinator. The folder should only contain your images and nothing else.";
+
+/* Starting model creation */
+"Initializing" = "Initializing...";
+
+/* Message to be displayed at about this app window and onboarding screen */
+"MadeWithLove" = "Made with ❤️ and passion by Bertan.";
+
+/* Alert body for model creation error */
+"ModelCreationErrorAlertBody" = "An error occurred while creating the model. Make sure the source images are valid.";
+
+/* Notification body for model export failure */
+"ModelExportFailureNotificationBody %@" = "Could not export the model: \"%@\".";
+
+/* Notification title for model export failure */
+"ModelExportFailureNotificationTitle" = "❌ Model Export Failed";
+
+/* Notification body for model export success */
+"ModelExportSucessNotificationBody %@" = "Successfully exported the model: \"%@\".";
+
+/* Notification title for model export success */
+"ModelExportSucessNotificationTitle" = "😄 Model Export Complete!";
+
+/* Picker: Sets the model quality */
+"ModelQuality" = "Model Quality";
+
+/* Help popover title for model quality */
+"ModelQualityHelpBody" = "Choose the output model detail. Keep in mind that the higher the quality, the more disk space and time it'll take to create!";
+
+/* Help popover title for model quality */
+"ModelQualityHelpTitle" = "About Model Quality";
+
+/* Alert body for model save */
+"ModelSaveErrorAlertBody" = "An error occurred while saving the model.";
+
+/* Model Settings title in the sidebar */
+"ModelSettings" = "Model Settings";
+
+/* Label: Viewed as a placeholder when there is no model in the model viewer */
+"NoModelToViewMessage" = "Preview or export a model to see it here!";
+
+/* Alert body for no source folder found error */
+"NoSourceFolderErrorAlertBody" = "Source folder not found—this may be a bug.";
+
+/* Image folder name placeholder when not selected */
+"NotSelected" = "Not Selected";
+
+/* Label: Shown in the main window if the user's devie does not support Object Capture, more info about compatibility issue. */
+"ObjectCaptureNotSupportedDescription" = "To use this app, you need either a Mac with an Apple Silicon processor or an Intel processor and a “high-power” discrete GPU. [Learn more...](http://www.capturinator.bertan.codes/support/system-requirements)";
+
+/* Label: Shown in the main window if the user's devie does not support Object Capture. */
+"ObjectCaptureNotSupportedTitle" = "Sorry, your device doesn't seem to support Object Capture";
+
+/* Toggle: Sets Object masking option */
+"ObjectMasking" = "Object Masking";
+
+/* Help popover body for object masking */
+"ObjectMaskingHelpBody" = "Object masking tries to filter out unrelated surroundings (plants, buildings, etc.)  from the samples to increase performance and create a more accurate model. Turn this off if you don’t want the background filtered out.";
+
+/* Help popover title for object masking */
+"ObjectMaskingHelpTitle" = "About Object Masking";
+
+/* Text: Greets the user for the first time on the onboarding screen */
+"OnboardingWelcome" = "Welcome to Capturinator!";
+
+/* Button[TouchBar]: Opens image folder */
+"OpenFolder" = "Open Folder";
+
+/* Onboarding screen subtitle */
+"OpenSource" = "Open Source";
+
+/* Onboarding screen text under open source */
+"OpenSourceBody" = "This app is open-source under the MIT license. I'm a 16-year-old developer and a lover of all things tech. You can check out and contribute to my projects on [my GitHub profile](http://github.com/bertant). Thanks for using the app!";
+
+/* Notification body for preview creation failure */
+"PreviewCreationFailureNotificationBody %@" = "Could not create the preview for the source folder: \"%@\".";
+
+/* Notification title for preview creation failure */
+"PreviewCreationFailureNotificationTitle" = "❌ Preview Creation Failed";
+
+/* Notification body for preview creation success */
+"PreviewCreationSuccessNotificationBody %@" = "Successfully created the preview for the source folder: \"%@\".";
+
+/* Notification title for preview creation success */
+"PreviewCreationSuccessNotificationTitle" = "😄 Preview Creation Complete!";
+
+/* Alert body for photogrammetry session creation error */
+"PSCreationErrorAlertBody" = "An error occurred while creating photogrammetry session. Make sure the source images are valid!";
+
+/* Body of the app termination confirmation dialog */
+"QuitAppAlertBody" = "Any currently running operations will stop, and all changes will be lost.";
+
+/* Title of the app termination confirmation dialog */
+"QuitAppAlertTitle" = "Quit Now?";
+
+/* RAW model quality */
+"RAW" = "RAW!";
+
+/* Refines a preview model */
+"RefinePreview" = "Refine Preview";
+
+/* Title for the save panel shown before exporting model */
+"SavePanelTitle" = "Choose Where to Save Your Model";
+
+/* Text: Shown in progress bar while saving a finished model */
+"SavingModel" = "Saving Model...";
+
+/* Toggle: Sets Sequential samples option */
+"SequentialSamples" = "Sequential Samples";
+
+/* Help popover body for sequential samples */
+"SequentialSamplesHelpBody" = "If adjacent sample images are next to each other, turn this on to increase performance. If not provided in a particular order, keep this off.";
+
+/* Help popover title for sequential samples */
+"SequentialSamplesHelpTitle" = "About Sequential Samples";
+
+/* Button: Shows the exported model in Finder */
+"ShowInFinder" = "Show In Finder";
+
+/* Button: Dismisses the onboarding screen */
+"StartCreating" = "Start Creating!";
+
+/* Button[Progress Bar]: Stops model creation */
+"StopCreating" = "Stop Creating";
+
+/* Body for the stop model creation confirmation dialog */
+"StopCreatingModelAlertBody" = "Are you sure you want to stop creating the model? All progress will be lost.";
+
+/* Title for the stop model creation confirmation dialog */
+"StopCreatingModelAlertTitle" = "Stop Creating Model?";
+
+/* Menu Command: Opens the Capturinator Support Website */
+"SupportMenuCommandTitle" = "Capturinator Support";
+
+/* Onboarding screen subtitle */
+"TakePhotos" = "Take Photos";
+
+/* Onboarding screen text under take photos */
+"TakePhotosBody" = "Capture 30-200 overlapping photographs of the object you want to scan from every angle - including the top and the bottom. Preferably use an iPhone with a depth-sensing camera or a high-quality DSLR camera.";
+
+/* Button: Toggles Sidebar */
+"ToggleSidebar" = "Toggle Sidebar";
+
+/* Alert body for unexpected fatal session error */
+"UnexpectedFatalSessionErrorAlertBody" = "An unexpected fatal error occurred with the photogrammetry session :{";
+
+/* Alert body for unexpected model creation error */
+"UnexpectedModelCreationErrorAlertBody" = "An unexpected error occurred while creating the model.";
+
+/* Welcome text at the top of the sidebar */
+"Welcome" = "Welcome!";
+
