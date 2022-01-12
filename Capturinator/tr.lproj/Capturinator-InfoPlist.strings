@@ -1,0 +1,6 @@
+/* Bundle name */
+"CFBundleName" = "Capturinator";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "© 2021 Mehmet Bertan Tarakçıoğlu";
+
