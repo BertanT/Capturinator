@@ -13,7 +13,7 @@
 		565E3EB326CE668000E5FE4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565E3EB226CE668000E5FE4D /* Assets.xcassets */; };
 		565E3EB626CE668000E5FE4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565E3EB526CE668000E5FE4D /* Preview Assets.xcassets */; };
 		565E3EC426CE671600E5FE4D /* CloseAlertWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E3EC126CE671600E5FE4D /* CloseAlertWindowDelegate.swift */; };
-		565E3EC526CE671600E5FE4D /* Object_Capture_CreateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E3EC226CE671600E5FE4D /* Object_Capture_CreateApp.swift */; };
+		565E3EC526CE671600E5FE4D /* CapturinatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E3EC226CE671600E5FE4D /* CapturinatorApp.swift */; };
 		565E3EC626CE671600E5FE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E3EC326CE671600E5FE4D /* AppDelegate.swift */; };
 		565E3EC926CE672500E5FE4D /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E3EC726CE672500E5FE4D /* SharedData.swift */; };
 		565E3ECA26CE672500E5FE4D /* ModelFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E3EC826CE672500E5FE4D /* ModelFileManager.swift */; };
@@ -33,6 +33,7 @@
 		565E3EE826CE676100E5FE4D /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E3EE526CE676000E5FE4D /* GradientBackground.swift */; };
 		565E3EE926CE676100E5FE4D /* GradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E3EE626CE676000E5FE4D /* GradientExtension.swift */; };
 		565E3EEA26CE676100E5FE4D /* RoundedFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E3EE726CE676000E5FE4D /* RoundedFont.swift */; };
+		56B1E477284B5BB70025E387 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56B1E476284B5BB70025E387 /* .swiftlint.yml */; };
 		56D7A622278CD63200925B5C /* CompatibilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7A621278CD63200925B5C /* CompatibilityChecker.swift */; };
 		56D7A624278CDBC300925B5C /* NotSupportedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7A623278CDBC300925B5C /* NotSupportedView.swift */; };
 /* End PBXBuildFile section */
@@ -46,7 +47,7 @@
 		565E3EB226CE668000E5FE4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		565E3EB526CE668000E5FE4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		565E3EC126CE671600E5FE4D /* CloseAlertWindowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseAlertWindowDelegate.swift; sourceTree = "<group>"; };
-		565E3EC226CE671600E5FE4D /* Object_Capture_CreateApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object_Capture_CreateApp.swift; sourceTree = "<group>"; };
+		565E3EC226CE671600E5FE4D /* CapturinatorApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturinatorApp.swift; sourceTree = "<group>"; };
 		565E3EC326CE671600E5FE4D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		565E3EC726CE672500E5FE4D /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		565E3EC826CE672500E5FE4D /* ModelFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelFileManager.swift; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		565E3EE526CE676000E5FE4D /* GradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		565E3EE626CE676000E5FE4D /* GradientExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
 		565E3EE726CE676000E5FE4D /* RoundedFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedFont.swift; sourceTree = "<group>"; };
+		56B1E476284B5BB70025E387 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		56D7A621278CD63200925B5C /* CompatibilityChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityChecker.swift; sourceTree = "<group>"; };
 		56D7A623278CDBC300925B5C /* NotSupportedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSupportedView.swift; sourceTree = "<group>"; };
 		56DE62BC2788374C009FE059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		565E3EA226CE667F00E5FE4D = {
 			isa = PBXGroup;
 			children = (
+				56B1E476284B5BB70025E387 /* .swiftlint.yml */,
 				5659FC94278469E50048326C /* Capturinator-InfoPlist.strings */,
 				5613ADD326CE778D00397E41 /* Localizable.strings */,
 				565E3EAD26CE667F00E5FE4D /* Capturinator */,
@@ -128,7 +131,7 @@
 		565E3EBC26CE66A800E5FE4D /* App */ = {
 			isa = PBXGroup;
 			children = (
-				565E3EC226CE671600E5FE4D /* Object_Capture_CreateApp.swift */,
+				565E3EC226CE671600E5FE4D /* CapturinatorApp.swift */,
 				565E3EC326CE671600E5FE4D /* AppDelegate.swift */,
 				565E3EC126CE671600E5FE4D /* CloseAlertWindowDelegate.swift */,
 			);
@@ -194,6 +197,7 @@
 				565E3EA726CE667F00E5FE4D /* Sources */,
 				565E3EA826CE667F00E5FE4D /* Frameworks */,
 				565E3EA926CE667F00E5FE4D /* Resources */,
+				56E33A59284B3E2200B06A98 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -244,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B1E477284B5BB70025E387 /* .swiftlint.yml in Resources */,
 				565E3EB626CE668000E5FE4D /* Preview Assets.xcassets in Resources */,
 				5613ADD526CE778D00397E41 /* Localizable.strings in Resources */,
 				565E3EB326CE668000E5FE4D /* Assets.xcassets in Resources */,
@@ -253,6 +258,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56E33A59284B3E2200B06A98 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		565E3EA726CE667F00E5FE4D /* Sources */ = {
@@ -276,7 +301,7 @@
 				565E3ECE26CE673000E5FE4D /* Sidebar.swift in Sources */,
 				565E3EE126CE675B00E5FE4D /* ToggleWithSpacing.swift in Sources */,
 				565E3EDF26CE675B00E5FE4D /* ModelViewer.swift in Sources */,
-				565E3EC526CE671600E5FE4D /* Object_Capture_CreateApp.swift in Sources */,
+				565E3EC526CE671600E5FE4D /* CapturinatorApp.swift in Sources */,
 				565E3EDD26CE675B00E5FE4D /* InclusiveGreeting.swift in Sources */,
 				565E3EE026CE675B00E5FE4D /* TitleLabel.swift in Sources */,
 				565E3ECF26CE673000E5FE4D /* OnboardingView.swift in Sources */,

@@ -15,7 +15,8 @@ public struct InclusiveGreeting: View {
     private var greetingMessage: String
     private let gradient: Gradient
     private let cycleDelay: Double
-    private let hands = ["\u{1F44B}", "\u{1F44B}\u{1F3FB}", "\u{1F44B}\u{1F3FC}", "\u{1F44B}\u{1F3FD}", "\u{1F44B}\u{1F3FE}", "\u{1F44B}\u{1F3FF}"]
+    private let hands = ["\u{1F44B}", "\u{1F44B}\u{1F3FB}", "\u{1F44B}\u{1F3FC}",
+                         "\u{1F44B}\u{1F3FD}", "\u{1F44B}\u{1F3FE}", "\u{1F44B}\u{1F3FF}"]
     // This timer will make sure the hands will switch periodically
     private let timer: Publishers.Autoconnect<Timer.TimerPublisher>
     

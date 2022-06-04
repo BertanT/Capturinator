@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Object_Capture_CreateApp: App {
+struct Capturinator: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var sharedData = SharedData()
     @AppStorage("onboardingShown") private var onboardingShown = false
@@ -29,32 +29,53 @@ struct Object_Capture_CreateApp: App {
                     }
                     .sheet(isPresented: $showingOnboarding) {
                         OnboardingView()
-
+                        
                     }
-            }else {
+            } else {
                 NotSupportedView()
                     .frame(minWidth: 1280, maxWidth: .infinity, minHeight: 720, maxHeight: .infinity)
             }
         }
         .commands {
             CommandGroup(replacing: .appInfo) {
-                Button(String(localized: "AboutMenuCommandTtitle", comment: "Menu Command: Shows the about this app window")){
+                Button(
+                    String(
+                        localized: "AboutMenuCommandTitle",
+                        comment: "Menu Command: Shows the about this app window")
+                ) {
                     NSApplication.shared.orderFrontStandardAboutPanel(
                         options: [
-                            NSApplication.AboutPanelOptionKey.credits: NSAttributedString(string: String(localized: "AboutWindowText", comment: "Short description of the app") + "\n" + String(localized: "MadeWithLove"), attributes: [ NSAttributedString.Key.font: NSFont.labelFont(ofSize: 12)]),
-                            NSApplication.AboutPanelOptionKey(rawValue: "Copyright"): Bundle.main.object(forInfoDictionaryKey: "NSHumanReadableCopyright") ?? ""
+                            NSApplication.AboutPanelOptionKey.credits:
+                                NSAttributedString(
+                                    string:
+                                        String(
+                                            localized: "AboutWindowText",
+                                            comment: "Short description of the app") + "\n" +
+                                    String(localized: "MadeWithLove"),
+                                    attributes:
+                                        [ NSAttributedString.Key.font: NSFont.labelFont(ofSize: 12) ]),
+                            NSApplication.AboutPanelOptionKey(rawValue: "Copyright"):
+                                Bundle.main.object(forInfoDictionaryKey: "NSHumanReadableCopyright") ?? ""
                         ])
                     
                 }
             }
             CommandGroup(replacing: .help) {
-                Button(String(localized: "GettingStartedMenuCommandTittle", comment: "Menu Command: Shows the onboarding screen")) {
+                Button(
+                    String(
+                        localized: "GettingStartedMenuCommandTittle",
+                        comment: "Menu Command: Shows the onboarding screen")
+                ) {
                     showingOnboarding.toggle()
                 }
                 .keyboardShortcut("?")
             }
             CommandGroup(after: .help) {
-                Button(String(localized: "SupportMenuCommandTitle", comment: "Menu Command: Opens the Capturinator Support Website")) {
+                Button(
+                    String(
+                        localized: "SupportMenuCommandTitle",
+                        comment: "Menu Command: Opens the Capturinator Support Website")
+                ) {
                     if let url = URL(string: "http://www.capturinator.bertan.codes/support") {
                         NSWorkspace.shared.open(url)
                     }

@@ -12,7 +12,7 @@ struct HelpPopover: View {
     let title: String
     let description: String
     var body: some View {
-        Button(action: { presented.toggle() }) {
+        Button { presented.toggle() } label: {
             Image(systemName: "questionmark.circle")
                 .accessibilityLabel(title)
                 .font(.title3)
@@ -43,6 +43,9 @@ extension View {
 
 struct HelpPopover_Previews: PreviewProvider {
     static var previews: some View {
-        HelpPopover(title: "Hello, world!", description: "This is the SwiftUI preview for the help popover veiw I've created")
+        HelpPopover(title:
+                        "Hello, world!",
+                    description: "This is the SwiftUI preview for the help popover view I've created")
     }
 }
+

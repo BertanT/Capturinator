@@ -1,5 +1,5 @@
 /* Button: Shows the about this app window */
-"AboutMenuCommandTtitle" = "Capturinator Hakkında";
+"AboutMenuCommandTitle" = "Capturinator Hakkında";
 
 /* Short description of the app */
 "AboutWindowText" = "Fotoğraflar ile 3D Modeller Oluşturun!";
@@ -43,7 +43,7 @@
 /* Title for generic error alert */
 "ErrorAlertTitle" = "Bir Şeyler Ters Gitti";
 
-/* Text: Shown in progress bar after a model has been succesfully exported */
+/* Text: Shown in progress bar after a model has been successfully exported */
 "ExportComplete %@" = "%@ başarılı bir şekilde dışarı aktarıldı!";
 
 /* Button: Creates and exports model */
@@ -101,10 +101,10 @@
 "ModelExportFailureNotificationTitle" = "❌ Model Dışarı Aktarılamadı";
 
 /* Notification body for model export success */
-"ModelExportSucessNotificationBody %@" = "\"%@\" Başarılı bir şekilde dışarı aktarıldı.";
+"ModelExportSuccessNotificationBody %@" = "\"%@\" Başarılı bir şekilde dışarı aktarıldı.";
 
 /* Notification title for model export success */
-"ModelExportSucessNotificationTitle" = "😄 Model Dışarı Aktarıldı!";
+"ModelExportSuccessNotificationTitle" = "😄 Model Dışarı Aktarıldı!";
 
 /* Picker: Sets the model quality */
 "ModelQuality" = "Model Kalitesi";
@@ -130,10 +130,10 @@
 /* Image folder name placeholder when not selected */
 "NotSelected" = "Seçilmedi";
 
-/* Label: Shown in the main window if the user's devie does not support Object Capture, more info about compatibility issue. */
+/* Label: Shown in the main window if the user's device does not support Object Capture, more info about compatibility issue. */
 "ObjectCaptureNotSupportedDescription" = "Bu uygulamayı kullanabilmek için Apple Silicon işlemciye ya da Intel işlemciye ve \"yüksek güçlü\" bir grafik işlemcisine sahip bir Mac bilgisayarına ihtiyacınız var. [Daha fazla bilgi...](http://www.capturinator.bertan.codes/support/system-requirements)";
 
-/* Label: Shown in the main window if the user's devie does not support Object Capture. */
+/* Label: Shown in the main window if the user's device does not support Object Capture. */
 "ObjectCaptureNotSupportedTitle" = "Maalesef cihazınız Object Capture teknolojisini desteklemiyor";
 
 /* Toggle: Sets Object masking option */

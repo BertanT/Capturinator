@@ -8,13 +8,15 @@
 import Foundation
 
 class ModelFileManager {
-    private func tempFolderURL(apropiateFor: URL?) -> URL {
-        let tempFolderURL = try? FileManager.default.url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: apropiateFor, create: true)
+    private func tempFolderURL(appropriateFor: URL?) -> URL {
+        let tempFolderURL = try? FileManager.default.url(
+            for: .itemReplacementDirectory, in: .userDomainMask,
+            appropriateFor: appropriateFor, create: true)
         return tempFolderURL ?? URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
     }
     
-    func generateTempModelURL(apropiateFor: URL? = nil) -> URL {
-        let directoryURL = tempFolderURL(apropiateFor: apropiateFor)
+    func generateTempModelURL(appropriateFor: URL? = nil) -> URL {
+        let directoryURL = tempFolderURL(appropriateFor: appropriateFor)
         let tempFileURL = directoryURL.appendingPathComponent(UUID().uuidString).appendingPathExtension("usdz")
         return tempFileURL
     }
@@ -27,7 +29,7 @@ class ModelFileManager {
         try fileManager.copyItem(at: tempModelURL, to: permanentURL)
     }
     
-    func removeTempModel(modelURL: URL) throws{
+    func removeTempModel(modelURL: URL) throws {
         try FileManager.default.removeItem(at: modelURL)
     }
 }

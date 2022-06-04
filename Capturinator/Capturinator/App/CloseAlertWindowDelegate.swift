@@ -24,7 +24,7 @@ class CloseAlertWindowDelegate: NSObject, NSWindowDelegate {
             let response = alert.runModal()
             
             if let suppressionResponse = alert.suppressionButton?.state {
-                if suppressionResponse == NSControl.StateValue.on  {
+                if suppressionResponse == NSControl.StateValue.on {
                     userSuppressedWindowCloseAlert = true
                 }
             }

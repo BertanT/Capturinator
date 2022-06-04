@@ -17,12 +17,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { success, error in
             if success {
                 print("User granted notifications access :)")
-            }else if let e = error {
-                print(e.localizedDescription)
+            } else if let error = error {
+                print(error.localizedDescription)
             }
         }
     }
-    
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         shouldAskBeforeQuitting = false
@@ -38,11 +37,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             alert.addButton(withTitle: String(localized: "Quit", comment: "Button: Quits app"))
             alert.addButton(withTitle: String(localized: "Cancel", comment: "General purpose cancel button"))
             alert.showsSuppressionButton = true
-
+            
             let response = alert.runModal()
             
             if let suppressionResponse = alert.suppressionButton?.state {
-                if suppressionResponse == NSControl.StateValue.on  {
+                if suppressionResponse == NSControl.StateValue.on {
                     userSuppressedQuitAlert = true
                 }
             }

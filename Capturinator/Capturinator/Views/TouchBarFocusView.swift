@@ -22,7 +22,7 @@ struct TouchBarFocusView: NSViewRepresentable {
             if let window = nsView.window {
                 // While we're at it, why not implement the window close alert :)
                 window.delegate = closeAlertWindowDelegate
-                if let _ = window.firstResponder as? NSWindow {
+                if window.firstResponder as? NSWindow != nil {
                     window.makeFirstResponder(nsView)
                 }
             }

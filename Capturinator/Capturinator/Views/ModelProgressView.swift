@@ -30,9 +30,11 @@ struct ModelProgressView: View {
             case .bar:
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading, spacing: 5.0) {
-                        Text("CreatingModel \(Int(sharedData.modelProcessingProgress * 100))", comment: "Text: Shows model creation progress in progress bar")
-                            .bold()
-                            .roundedFont(.body)
+                        Text(
+                            "CreatingModel \(Int(sharedData.modelProcessingProgress * 100))",
+                            comment: "Text: Shows model creation progress in progress bar")
+                        .bold()
+                        .roundedFont(.body)
                         
                         ProgressView(value: sharedData.modelProcessingProgress, total: 1)
                     }
@@ -53,7 +55,8 @@ struct ModelProgressView: View {
             case .finished:
                 HStack {
                     Label {
-                        Text("ExportComplete \(sharedData.showInFinderURL?.lastPathComponent ?? "")", comment: "Text: Shown in progress bar after a model has been succesfully exported")
+                        Text("ExportComplete \(sharedData.showInFinderURL?.lastPathComponent ?? "")",
+                             comment: "Text: Shown in progress bar after a model has been successfully exported")
                     }icon: {
                         Image(systemName: "checkmark.circle")
                             .symbolRenderingMode(.hierarchical)
@@ -66,17 +69,20 @@ struct ModelProgressView: View {
                     Button(String(localized: "ShowInFinder", comment: "Button: Shows the exported model in Finder")) {
                         NSWorkspace.shared.selectFile(sharedData.showInFinderURL?.path, inFileViewerRootedAtPath: "")
                     }
-                    Button(action: {
+                    Button {
                         withAnimation {
                             sharedData.modelProgressViewState = .hidden
                         }
-                    }) {
+                    } label: {
                         Image(systemName: "xmark.circle.fill")
                     }
-                    .help(String(localized: "Dismiss", comment: "Button: Hides the progress bar before it automatically hides after successful export"))
+                    .help(
+                        String(
+                            localized: "Dismiss",
+                            comment: "Button: Hides the progress bar before it automatically hides after successful export"))
                     .buttonStyle(BorderlessButtonStyle())
                 }
-
+                
             }
         }
         .zIndex(1)
@@ -89,7 +95,7 @@ struct ModelProgressView: View {
                 .foregroundStyle(.regularMaterial)
         )
         .onChange(of: sharedData.modelProgressViewState) { newValue in
-            if newValue == .finished  {
+            if newValue == .finished {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
                     withAnimation {
                         sharedData.modelProgressViewState = .hidden

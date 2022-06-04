@@ -13,15 +13,23 @@ struct NotSupportedView: View {
             VisualEffectView(material: .sidebar, blendingMode: .behindWindow)
             VStack {
                 Label(title: {
-                    Text((try? AttributedString(markdown: String(localized: "ObjectCaptureNotSupportedTitle", comment: "Label: Shown in the main window if the user's devie does not support Object Capture."))) ?? "MD Formatting Error!")
+                    Text((try? AttributedString(markdown:
+                                                    String(
+                                                        localized: "ObjectCaptureNotSupportedTitle",
+                                                        comment: "Label: Shown in the main window if the user's device does not support Object Capture.")
+                                               )) ?? "MD Formatting Error!")
                 }, icon: {
                     Image(systemName: "laptopcomputer.trianglebadge.exclamationmark")
                 })
-                    .font(.title)
-                    .foregroundColor(.red)
-                    .padding(2)
-                Text((try? AttributedString(markdown: String(localized: "ObjectCaptureNotSupportedDescription", comment: "Label: Shown in the main window if the user's devie does not support Object Capture, more info about compatibility issue."))) ?? "MD Formatting Error!")
-                    .font(.title3)
+                .font(.title)
+                .foregroundColor(.red)
+                .padding(2)
+                Text((try? AttributedString(markdown:
+                                                String(
+                                                    localized: "ObjectCaptureNotSupportedDescription",
+                                                    comment: "Label: Shown in the main window if the user's device does not support Object Capture, more info about compatibility issue.")
+                                           )) ?? "MD Formatting Error!")
+                .font(.title3)
             }
         }
     }
