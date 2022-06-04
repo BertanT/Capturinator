@@ -1,5 +1,5 @@
 /* Button: Shows the about this app window */
-"AboutMenuCommandTtitle" = "About Capturinator";
+"AboutMenuCommandTitle" = "About Capturinator";
 
 /* Short description of the app */
 "AboutWindowText" = "Create 3D Models With Photos!";
@@ -31,8 +31,8 @@
 /* Title for generic error alert */
 "ErrorAlertTitle" = "Something Went Wrong";
 
-/* Text: Shown in progress bar after a model has been succesfully exported */
-"ExportComplete %@" = "Sucessfully exported model: %@";
+/* Text: Shown in progress bar after a model has been successfully exported */
+"ExportComplete %@" = "Successfully exported model: %@";
 
 /* Button: Creates and exports model */
 "ExportModel" = "Export Model";
@@ -83,10 +83,10 @@
 "ModelExportFailureNotificationTitle" = "❌ Model Export Failed";
 
 /* Notification body for model export success */
-"ModelExportSucessNotificationBody %@" = "Successfully exported the model: \"%@\".";
+"ModelExportSuccessNotificationBody %@" = "Successfully exported the model: \"%@\".";
 
 /* Notification title for model export success */
-"ModelExportSucessNotificationTitle" = "😄 Model Export Complete!";
+"ModelExportSuccessNotificationTitle" = "😄 Model Export Complete!";
 
 /* Picker: Sets the model quality */
 "ModelQuality" = "Model Quality";
@@ -112,10 +112,10 @@
 /* Image folder name placeholder when not selected */
 "NotSelected" = "Not Selected";
 
-/* Label: Shown in the main window if the user's devie does not support Object Capture, more info about compatibility issue. */
+/* Label: Shown in the main window if the user's device does not support Object Capture, more info about compatibility issue. */
 "ObjectCaptureNotSupportedDescription" = "To use this app, you need either a Mac with an Apple Silicon processor or an Intel processor and a “high-power” discrete GPU. [Learn more...](http://www.capturinator.bertan.codes/support/system-requirements)";
 
-/* Label: Shown in the main window if the user's devie does not support Object Capture. */
+/* Label: Shown in the main window if the user's device does not support Object Capture. */
 "ObjectCaptureNotSupportedTitle" = "Sorry, your device doesn't seem to support Object Capture";
 
 /* Toggle: Sets Object masking option */

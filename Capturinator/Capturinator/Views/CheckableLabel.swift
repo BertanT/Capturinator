@@ -16,7 +16,7 @@ struct CheckableLabel: View {
             Label(text, systemImage: systemImage)
             if checked {
                 Image(systemName: "checkmark")
-            }else {
+            } else {
                 Image(systemName: "checkmark")
                     .hidden()
             }
@@ -24,7 +24,7 @@ struct CheckableLabel: View {
     }
 }
 
-struct CheckableLabel_Preiews: PreviewProvider {
+struct CheckableLabelPreviews: PreviewProvider {
     static var previews: some View {
         CheckableLabel(text: "Hello World", systemImage: "face.smiling", checked: true)
             .font(.largeTitle)

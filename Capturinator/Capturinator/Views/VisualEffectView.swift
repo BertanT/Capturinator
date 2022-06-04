@@ -10,7 +10,7 @@ import SwiftUI
 struct VisualEffectView: NSViewRepresentable {
     let material: NSVisualEffectView.Material
     let blendingMode: NSVisualEffectView.BlendingMode
-
+    
     func makeNSView(context: Context) -> NSVisualEffectView {
         let vfxView = NSVisualEffectView()
         
@@ -20,7 +20,7 @@ struct VisualEffectView: NSViewRepresentable {
         
         return vfxView
     }
-
+    
     func updateNSView(_ vfxView: NSVisualEffectView, context: Context) {
         vfxView.material = material
         vfxView.blendingMode = blendingMode

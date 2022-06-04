@@ -31,17 +31,19 @@ struct ContentView: View {
                 Group {
                     if let modelURL = sharedData.modelViewerModelURL {
                         ModelViewer(modelURL: modelURL)
-                    }else {
-                        Label(String(localized: "NoModelToViewMessage", comment: "Label: Viewed as a placeholder when there is no model in the model viewer"), systemImage: "arkit")
-                            .font(.title2)
+                    } else {
+                        Label(String(
+                            localized: "NoModelToViewMessage",
+                            comment: "Label: Viewed as a placeholder when there is no model in the model viewer"), systemImage: "arkit")
+                        .font(.title2)
                     }
                 }
                 .frame(maxHeight: .infinity)
                 ModelProgressView(cancelAction: {
                     showingCancelAlert.toggle()
                 })
-                    .environmentObject(sharedData)
-                    .padding()
+                .environmentObject(sharedData)
+                .padding()
             }
         }
         .onAppear {
@@ -61,25 +63,32 @@ struct ContentView: View {
         .alert(isPresented: $showingCancelAlert) {
             Alert(
                 title:
-                    Text("StopCreatingModelAlertTitle", comment: "Title for the stop model creation confirmation dialog"),
+                    Text("StopCreatingModelAlertTitle",
+                         comment: "Title for the stop model creation confirmation dialog"),
                 message:
-                    Text("StopCreatingModelAlertBody", comment: "Body for the stop model creation confirmation dialog"),
+                    Text("StopCreatingModelAlertBody",
+                         comment: "Body for the stop model creation confirmation dialog"),
                 primaryButton:
                         .cancel(),
                 secondaryButton:
-                        .destructive(Text("Stop", comment: "Stop model creation"), action: { photogrammetrySession?.cancel() })
+                        .destructive(Text("Stop",
+                                          comment: "Stop model creation"), action: { photogrammetrySession?.cancel() })
             )
         }
         .toolbar {
             ToolbarItem(placement: .navigation) {
-                Button(action: toogleSidebar) {
-                    Label(String(localized: "ToggleSidebar", comment: "Button: Toggles Sidebar"), systemImage: "sidebar.left")
+                Button(action: toggleSidebar) {
+                    Label(
+                        String(
+                            localized: "ToggleSidebar",
+                            comment: "Button: Toggles Sidebar"),
+                        systemImage: "sidebar.left")
                 }
             }
         }
     }
     
-    func toogleSidebar() {
+    func toggleSidebar() {
         NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
     }
 }

@@ -14,20 +14,20 @@ public extension Gradient {
     static var yellowGradient = Gradient(colors: [NSColor.systemOrange, NSColor.systemPink].map { Color($0) })
     static var purpleGradient = Gradient(colors: [Color(NSColor.systemPurple), Color(NSColor.systemPink)])
     static var redGradient = Gradient(colors: [NSColor.systemRed, NSColor.systemPink].map { Color($0) })
-    
+
     // Some fancy,
     // Computed property,
     // Some Fruit Company,
-    // Gredient out here.
-    
+    // Gradient out here.
+
     // Those colors... Seem familiar somehow
     static func sixColorGradient(colorRange: ClosedRange<Int>? = nil) -> Gradient {
         let sixColors = [NSColor](arrayLiteral: .systemGreen, .systemYellow, .systemOrange, .systemRed, .systemPurple, .systemBlue).map { Color($0) }
-        
-        if let range = colorRange, sixColors.indices.contains(range.lowerBound), sixColors.indices.contains(range.upperBound)  {
+
+        if let range = colorRange, sixColors.indices.contains(range.lowerBound), sixColors.indices.contains(range.upperBound) {
             return Gradient(colors: Array(sixColors[range]))
-            
-        }else {
+
+        } else {
             return Gradient(colors: sixColors)
         }
     }

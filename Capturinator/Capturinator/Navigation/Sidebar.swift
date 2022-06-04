@@ -14,7 +14,7 @@ struct Sidebar: View {
     typealias PSConfig = PhotogrammetrySession.Configuration
     typealias PSRequestDetail = PhotogrammetrySession.Request.Detail
     
-    @State private var processingErrorOccured = false
+    @State private var processingErrorOccurred = false
     
     @EnvironmentObject private var sharedData: SharedData
     @Binding var photogrammetrySession: PhotogrammetrySession?
@@ -46,86 +46,132 @@ struct Sidebar: View {
                 .frame(width: 0, height: 0)
                 .touchBar(
                     TouchBar(id: UUID().uuidString) {
-                    Group {
-                        switch touchBarState {
-                        case .main:
-                            Button(action: openFolder) {
-                                Label(String(localized: "OpenFolder", comment: "Button[TouchBar]: Opens image folder"), systemImage: "folder.fill")
-                            }
-                            Button(action: {
-                                touchBarState = .settings
-                            }) {
-                                Label(String(localized: "Settings", comment: "Button[TouchBar]: Shows Model Settings Strip"), systemImage: "slider.horizontal.3")
-                            }
-                            Button(action: {
-                                touchBarState = .quality
-                            }) {
-                                Label(NSLocalizedString("Quality", comment: "Button[TouchBar]: Shows Model Quality Picker Strip"), systemImage: "dial.min.fill")
-                            }
-                            Spacer()
-                            Group {
-                                Button(action: createPreview) {
-                                    Label(String(localized: "Preview", comment: "Button[TouchBar]: Creates a preview model"), systemImage: "paintbrush.fill")
+                        Group {
+                            switch touchBarState {
+                            case .main:
+                                Button(action: openFolder) {
+                                    Label(String(
+                                        localized: "OpenFolder",
+                                        comment: "Button[TouchBar]: Opens image folder"), systemImage: "folder.fill")
                                 }
-                                Button(action: { exportModel() }) {
-                                    Label(String(localized: "ExportModel", comment: "Button: Creates and exports model"), systemImage: "arkit")
+                                Button{
+                                    touchBarState = .settings
+                                } label: {
+                                    Label(String(localized:
+                                                    "Settings", comment:
+                                                    "Button[TouchBar]: Shows Model Settings Strip"), systemImage: "slider.horizontal.3")
                                 }
-                                .buttonStyle(.borderedProminent)
-                            }
-                            .disabled(inputFolderURL == nil || photogrammetrySession?.isProcessing ?? false)
-                        case .settings:
-                            Button(action: {
-                                withAnimation {
-                                    touchBarState = .main
+                                Button {
+                                    touchBarState = .quality
+                                } label: {
+                                    Label(
+                                        NSLocalizedString(
+                                            "Quality",
+                                            comment: "Button[TouchBar]: Shows Model Quality Picker Strip"),
+                                        systemImage: "dial.min.fill")
                                 }
-                            }) {
-                                Image(systemName: "xmark.circle.fill")
-                                    .font(.title)
-                            }
-                            .buttonStyle(.borderless)
-                            ToggleWithSpacing(String(localized: "SequentialSamples", comment: "Toggle: Sets Sequential samples option"), isOn: $usingSequentialSamples)
-                            ToggleWithSpacing(String(localized: "ObjectMasking", comment: "Toggle: Sets Object masking option"), isOn: $objectMasking)
-                            ToggleWithSpacing(String(localized: "HighFeatureSensitivityShortened", comment: "Toggle[TouchBar]: Sets high feature sensitivity option"), isOn: $highFeatureSensivity)
-                        case .quality:
-                            Button(action: {
-                                withAnimation {
-                                    touchBarState = .main
+                                Spacer()
+                                Group {
+                                    Button(action: createPreview) {
+                                        Label(String(
+                                            localized: "Preview",
+                                            comment: "Button[TouchBar]: Creates a preview model"), systemImage: "paintbrush.fill")
+                                    }
+                                    Button { exportModel() } label: {
+                                        Label(String(
+                                            localized: "ExportModel",
+                                            comment: "Button: Creates and exports model"), systemImage: "arkit")
+                                    }
+                                    .buttonStyle(.borderedProminent)
                                 }
-                            }) {
-                                Image(systemName: "xmark.circle.fill")
-                                    .font(.title)
-                            }
-                            .buttonStyle(.borderless)
-
-
-                            Button(action: {
-                                requestDetail = .reduced
-                            }) {
-                                CheckableLabel(text: String(localized: "Reduced", comment: "The lowest model quality"), systemImage: "square.grid.2x2", checked: requestDetail == .reduced)
-                            }
-
-                            Button(action: {
-                                requestDetail = .medium
-                            }) {
-                                CheckableLabel(text: String(localized: "Medium", comment: "Medium model quality"), systemImage: "square.grid.2x2.fill", checked: requestDetail == .medium)
-                            }
-
-                            Button(action: {
-                                requestDetail = .full
-                            }) {
-                                CheckableLabel(text: String(localized: "Full", comment: "Full model quality"), systemImage: "square.grid.3x2", checked: requestDetail == .full)
-                            }
-
-                            Button(action: {
-                                requestDetail = .raw
-                            }) {
-                                CheckableLabel(text: String(localized: "RAW", comment: "RAW model quality"), systemImage: "square.grid.3x2.fill", checked: requestDetail == .raw)
+                                .disabled(inputFolderURL == nil || photogrammetrySession?.isProcessing ?? false)
+                            case .settings:
+                                Button {
+                                    withAnimation {
+                                        touchBarState = .main
+                                    }
+                                } label: {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .font(.title)
+                                }
+                                .buttonStyle(.borderless)
+                                ToggleWithSpacing(
+                                    String(
+                                        localized: "SequentialSamples",
+                                        comment: "Toggle: Sets Sequential samples option"),
+                                    isOn: $usingSequentialSamples)
+                                ToggleWithSpacing(
+                                    String(
+                                        localized: "ObjectMasking",
+                                        comment: "Toggle: Sets Object masking option"),
+                                    isOn: $objectMasking)
+                                ToggleWithSpacing(
+                                    String(
+                                        localized: "HighFeatureSensitivityShortened",
+                                        comment: "Toggle[TouchBar]: Sets high feature sensitivity option"),
+                                    isOn: $highFeatureSensivity)
+                            case .quality:
+                                Button {
+                                    withAnimation {
+                                        touchBarState = .main
+                                    }
+                                } label: {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .font(.title)
+                                }
+                                .buttonStyle(.borderless)
+                                
+                                Button {
+                                    requestDetail = .reduced
+                                } label: {
+                                    CheckableLabel(
+                                        text:
+                                            String(
+                                                localized: "Reduced",
+                                                comment: "The lowest model quality"),
+                                        systemImage: "square.grid.2x2",
+                                        checked: requestDetail == .reduced)
+                                }
+                                
+                                Button {
+                                    requestDetail = .medium
+                                } label: {
+                                    CheckableLabel(
+                                        text:
+                                            String(
+                                                localized: "Medium",
+                                                comment: "Medium model quality"),
+                                        systemImage: "square.grid.2x2.fill",
+                                        checked: requestDetail == .medium)
+                                }
+                                
+                                Button {
+                                    requestDetail = .full
+                                } label: {
+                                    CheckableLabel(
+                                        text:
+                                            String(
+                                                localized: "Full",
+                                                comment: "Full model quality"),
+                                        systemImage: "square.grid.3x2",
+                                        checked: requestDetail == .full)
+                                }
+                                
+                                Button {
+                                    requestDetail = .raw
+                                } label: {
+                                    CheckableLabel(
+                                        text:
+                                            String(
+                                                localized: "RAW",
+                                                comment: "RAW model quality"),
+                                        systemImage: "square.grid.3x2.fill",
+                                        checked: requestDetail == .raw)
+                                }
                             }
                         }
-                    }
-                    .disabled(photogrammetrySession?.isProcessing ?? false)
-                }
-                )
+                        .disabled(photogrammetrySession?.isProcessing ?? false)
+                    })
             Text("Welcome", comment: "Welcome text at the top of the sidebar")
                 .bold()
                 .roundedFont(.largeTitle)
@@ -140,24 +186,41 @@ struct Sidebar: View {
                 Divider()
                     .padding(.bottom, 5)
                 Group {
-                    TitleLabel(title: String(localized: "ImageFolder", comment: "Image folder title in the sidebar"), systemImage: "folder.fill", gradient: .purpleGradient)
+                    TitleLabel(
+                        title:
+                            String(
+                                localized: "ImageFolder",
+                                comment: "Image folder title in the sidebar"),
+                        systemImage: "folder.fill",
+                        gradient: .purpleGradient)
                     HStack {
                         Group {
                             if let url = inputFolderURL {
                                 Text(url.lastPathComponent)
                                 Spacer()
-                            }else {
+                            } else {
                                 Text("NotSelected", comment: "Image folder name placeholder when not selected")
                             }
                         }
                         .roundedFont(.headline)
                         Spacer()
-                        Button(inputFolderURL == nil ? String(localized: "Open", comment: "Button: Opens image folder") : String(localized: "Change", comment: "Chnages the selected image folder")) {
+                        Button(inputFolderURL == nil ?
+                               String(localized: "Open", comment: "Button: Opens image folder") :
+                                String(localized: "Change", comment: "Chnages the selected image folder")
+                        ) {
                             openFolder()
                         }
                         .roundedFont(.body)
                     }
-                    .helpPopover(title: String(localized: "ImageFolderHelpTitle", comment: "Help popover title for image folder"), description: String(localized: "ImageFolderHelpBody", comment: "Help popover body for image folder"))
+                    .helpPopover(
+                        title:
+                            String(
+                                localized: "ImageFolderHelpTitle",
+                                comment: "Help popover title for image folder"),
+                        description:
+                            String(
+                                localized: "ImageFolderHelpBody",
+                                comment: "Help popover body for image folder"))
                     .padding(0)
                 }
                 .disabled(photogrammetrySession?.isProcessing ?? false)
@@ -166,35 +229,69 @@ struct Sidebar: View {
                     .padding(.vertical, 5)
                 
                 Group {
-                    TitleLabel(title: String(localized: "ModelSettings", comment: "Model Settings title in the sidebar"), systemImage: "slider.horizontal.3", gradient: .yellowGradient)
+                    TitleLabel(
+                        title: String(localized: "ModelSettings", comment: "Model Settings title in the sidebar"),
+                        systemImage: "slider.horizontal.3", gradient: .yellowGradient)
                     
                     ToggleWithSpacing(String(localized: "SequentialSamples"), isOn: $usingSequentialSamples)
                         .onChange(of: usingSequentialSamples) { newValue in
                             psConfig.sampleOrdering = newValue ? .sequential : .unordered
                         }
-                        .helpPopover(title: String(localized: "SequentialSamplesHelpTitle", comment: "Help popover title for sequential samples"), description: String(localized: "SequentialSamplesHelpBody", comment: "Help popover body for sequential samples"))
+                        .helpPopover(
+                            title:
+                                String(
+                                    localized: "SequentialSamplesHelpTitle",
+                                    comment: "Help popover title for sequential samples"),
+                            description:
+                                String(
+                                    localized: "SequentialSamplesHelpBody",
+                                    comment: "Help popover body for sequential samples"))
                     
                     ToggleWithSpacing(String(localized: "ObjectMasking"), isOn: $objectMasking)
                         .onChange(of: objectMasking) { newValue in
                             psConfig.isObjectMaskingEnabled = newValue
                         }
-                        .helpPopover(title: String(localized: "ObjectMaskingHelpTitle", comment: "Help popover title for object masking"), description: String(localized: "ObjectMaskingHelpBody", comment: "Help popover body for object masking"))
+                        .helpPopover(
+                            title:
+                                String(
+                                    localized: "ObjectMaskingHelpTitle",
+                                    comment: "Help popover title for object masking"),
+                            description:
+                                String(
+                                    localized: "ObjectMaskingHelpBody",
+                                    comment: "Help popover body for object masking"))
                     
                     ToggleWithSpacing(String(localized: "HighFeatureSensitivity"), isOn: $highFeatureSensivity)
                         .onChange(of: highFeatureSensivity) { newValue in
                             psConfig.featureSensitivity = newValue ? .high : .normal
                         }
-                        .helpPopover(title: String(localized: "HighFeatureSensitivityHelpTitle", comment: "Help popover title for high feature sensitivity"), description: String(localized: "HighFeatureSensitivityHelpBody", comment: "Help popover body for high feature sensitivity"))
+                        .helpPopover(
+                            title:
+                                String(
+                                    localized: "HighFeatureSensitivityHelpTitle",
+                                    comment: "Help popover title for high feature sensitivity"),
+                            description:
+                                String(
+                                    localized: "HighFeatureSensitivityHelpBody",
+                                    comment: "Help popover body for high feature sensitivity"))
                     
                     Picker(String(localized: "ModelQuality", comment: "Picker: Sets the model quality"), selection: $requestDetail) {
                         Text("RAW").tag(PSRequestDetail.raw)
                         Text("Full").tag(PSRequestDetail.full)
                         Text("Medium").tag(PSRequestDetail.medium)
                         Text("Reduced").tag(PSRequestDetail.reduced)
-                    
+                        
                     }
                     .roundedFont(.headline)
-                    .helpPopover(title: String(localized: "ModelQualityHelpTitle", comment: "Help popover title for model quality"), description: String(localized: "ModelQualityHelpBody", comment: "Help popover title for model quality"))
+                    .helpPopover(
+                        title:
+                            String(
+                                localized: "ModelQualityHelpTitle",
+                                comment: "Help popover title for model quality"),
+                        description:
+                            String(
+                                localized: "ModelQualityHelpBody",
+                                comment: "Help popover title for model quality"))
                 }
                 .disabled(photogrammetrySession?.isProcessing ?? false)
                 
@@ -203,10 +300,16 @@ struct Sidebar: View {
                 Divider()
                     .padding(.vertical, 5)
                 Group {
-                    TitleLabel(title: String(localized: "Rendering", comment: "Rendering title in the sidebar"), systemImage: "paintbrush.fill", gradient: .greenGradient)
+                    TitleLabel(
+                        title: String(localized: "Rendering", comment: "Rendering title in the sidebar"),
+                        systemImage: "paintbrush.fill", gradient: .greenGradient)
                     HStack {
                         Spacer()
-                        Button(sharedData.modelViewerModelURL == nil ? String(localized: "CreatePreview", comment: "Creates a preview model") : String(localized: "RefinePreview", comment: "Refines a preview model")) {
+                        Button(
+                            sharedData.modelViewerModelURL == nil ?
+                            String(localized: "CreatePreview", comment: "Creates a preview model") :
+                                String(localized: "RefinePreview", comment: "Refines a preview model")
+                        ) {
                             createPreview()
                         }
                         .controlSize(.large)
@@ -225,7 +328,9 @@ struct Sidebar: View {
             .padding([.horizontal, .bottom])
         }
         .alert(isPresented: $showingAlert) {
-            return Alert(title: Text(String(localized: "ErrorAlertTitle", comment: "Title for generic error alert")), message: Text(alertText), dismissButton: nil)
+            return Alert(
+                title: Text(String(localized: "ErrorAlertTitle", comment: "Title for generic error alert")),
+                message: Text(alertText), dismissButton: nil)
         }
     }
     
@@ -240,7 +345,6 @@ struct Sidebar: View {
     }
     
     private func chooseSaveDestination() -> URL? {
-        // Clear out the old url
         let savePanel = NSSavePanel()
         savePanel.title = String(localized: "SavePanelTitle", comment: "Title for the save panel shown before exporting model")
         savePanel.allowsOtherFileTypes = false
@@ -252,28 +356,30 @@ struct Sidebar: View {
         return nil
     }
     
-    private func createModel(permenantSaveURL: URL? = nil) {
-        processingErrorOccured = false
-
+    private func createModel(permanent: URL? = nil) {
+        processingErrorOccurred = false
+        
         guard let inputURL = inputFolderURL else {
             print("inputFolderURL is nil! Aborting...")
-            processingErrorOccured = true
-            alertText = String(localized: "NoSourceFolderErrorAlertBody", comment: "Alert body for no source folder found error")
+            processingErrorOccurred = true
+            alertText = String(localized: "NoSourceFolderErrorAlertBody",
+                               comment: "Alert body for no source folder found error")
             return
         }
-
+        
         do {
             photogrammetrySession = try PhotogrammetrySession(input: inputURL, configuration: psConfig)
-        }catch {
+        } catch {
             print("Could not create photogrammetry session, aborting...")
-            processingErrorOccured = true
-            alertText = String(localized: "PSCreationErrorAlertBody", comment: "Alert body for photogrammetry session creation error")
+            processingErrorOccurred = true
+            alertText = String(localized:
+                                "PSCreationErrorAlertBody",
+                               comment: "Alert body for photogrammetry session creation error")
             return
         }
         
-        let temporarySaveURL = ModelFileManager().generateTempModelURL(apropiateFor: permenantSaveURL)
-        let request = PhotogrammetrySession.Request.modelFile(url: temporarySaveURL, detail: permenantSaveURL == nil ? .preview : requestDetail)
-        
+        let temporarySaveURL = ModelFileManager().generateTempModelURL(appropriateFor: permanent)
+        let request = PhotogrammetrySession.Request.modelFile(url: temporarySaveURL, detail: permanent == nil ? .preview : requestDetail)
         
         Task(priority: .userInitiated) {
             do {
@@ -281,11 +387,12 @@ struct Sidebar: View {
                     switch output {
                     case .inputComplete:
                         print("Successfully initiallized images, beginning processing...")
-                    case .requestError(_, _):
+                    case .requestError:
                         print("Request error!")
-                        processingErrorOccured = true
-                        alertText = String(localized: "ModelCreationErrorAlertBody", comment: "Alert body for model creation error")
-                    case .requestComplete(_, _):
+                        processingErrorOccurred = true
+                        alertText = String(localized: "ModelCreationErrorAlertBody",
+                                           comment: "Alert body for model creation error")
+                    case .requestComplete:
                         print("Completed request!")
                     case .requestProgress(_, fractionComplete: let fractionComplete):
                         print("Current request is \(Int(fractionComplete*100))% complete")
@@ -293,7 +400,7 @@ struct Sidebar: View {
                         sharedData.modelProcessingProgress = fractionComplete
                     case .processingComplete:
                         print("Done processing!")
-                        handleCreationCompletion(temporaryLocation: temporarySaveURL, permenantSaveURL: permenantSaveURL)
+                        handleCreationCompletion(temporaryLocation: temporarySaveURL, permenantSaveURL: permanent)
                     case .processingCancelled:
                         print("Processing is cancelled")
                         withAnimation {
@@ -309,28 +416,31 @@ struct Sidebar: View {
                         print("Received unknown session output: \(output)")
                     }
                 }
-            }catch {
+            } catch {
                 print("Unexpected fatal session error. Aborting... ERROR=\(error)")
-                processingErrorOccured = true
-                alertText = String(localized: "UnexpectedFatalSessionErrorAlertBody", comment: "Alert body for unexpected fatal session error")
+                processingErrorOccurred = true
+                alertText = String(localized:
+                                    "UnexpectedFatalSessionErrorAlertBody",
+                                   comment: "Alert body for unexpected fatal session error")
             }
         }
-
+        
         do {
             withAnimation {
                 sharedData.modelProgressViewState = .initializing
             }
-
+            
             try photogrammetrySession!.process(requests: [request])
-        }catch {
+        } catch {
             print("Cannot process requests. ERROR=\(error)")
-            processingErrorOccured = true
-            alertText = String(localized: "UnexpectedModelCreationErrorAlertBody", comment: "Alert body for unexpected model creation error")
+            processingErrorOccurred = true
+            alertText = String(localized: "UnexpectedModelCreationErrorAlertBody",
+                               comment: "Alert body for unexpected model creation error")
             withAnimation {
                 sharedData.modelProgressViewState = .hidden
             }
         }
-
+        
     }
     
     private func createPreview() {
@@ -339,12 +449,12 @@ struct Sidebar: View {
     
     private func exportModel() {
         if let destinationURL = chooseSaveDestination() {
-            createModel(permenantSaveURL: destinationURL)
+            createModel(permanent: destinationURL)
         }
     }
     
     private func handleCreationCompletion(temporaryLocation: URL, permenantSaveURL: URL? = nil) {
-        if processingErrorOccured {
+        if processingErrorOccurred {
             withAnimation {
                 sharedData.modelProgressViewState = .hidden
             }
@@ -370,11 +480,11 @@ struct Sidebar: View {
                 try modelFileManager.copyTempModel(tempModelURL: temporaryLocation, permanentURL: saveURL)
                 sharedData.showInFinderURL = saveURL
                 sharedData.modelProgressViewState = .finished
-            }catch {
+            } catch {
                 print("Cannot save model to destination URL")
                 alertText = String(localized: "ModelSaveErrorAlertBody", comment: "Alert body for model save")
             }
-        }else {
+        } else {
             withAnimation {
                 sharedData.modelProgressViewState = .hidden
             }
@@ -387,19 +497,43 @@ struct Sidebar: View {
         
         if let filename = exportedModelFilename {
             if success {
-                content.title    = String(localized: "ModelExportSucessNotificationTitle", comment: "Notification title for model export success")
-                content.subtitle = String(format: String(localized: "ModelExportSucessNotificationBody %@", comment: "Notification body for model export success"), filename)
-            }else {
-                content.title    = String(localized: "ModelExportFailureNotificationTitle", comment: "Notification title for model export failure")
-                content.subtitle = String(format: String(localized: "ModelExportFailureNotificationBody %@", comment: "Notification body for model export failure"), filename)
+                content.title = String(
+                    localized: "ModelExportSuccessNotificationTitle",
+                    comment: "Notification title for model export success")
+                content.subtitle = String(format:
+                                            String(
+                                                localized: "ModelExportSuccessNotificationBody %@",
+                                                comment: "Notification body for model export success"),
+                                          filename)
+            } else {
+                content.title = String(
+                    localized: "ModelExportFailureNotificationTitle",
+                    comment: "Notification title for model export failure")
+                content.subtitle = String(format:
+                                            String(
+                                                localized: "ModelExportFailureNotificationBody %@",
+                                                comment: "Notification body for model export failure"),
+                                          filename)
             }
-        }else if let inputFolderName = inputFolderURL?.lastPathComponent {
+        } else if let inputFolderName = inputFolderURL?.lastPathComponent {
             if success {
-                content.title    = String(localized: "PreviewCreationSuccessNotificationTitle", comment: "Notification title for preview creation success")
-                content.subtitle = String(format: String(localized: "PreviewCreationSuccessNotificationBody %@", comment: "Notification body for preview creation success"), inputFolderName)
-            }else {
-                content.title    = String(localized: "PreviewCreationFailureNotificationTitle", comment: "Notification title for preview creation failure")
-                content.subtitle = String(format: String(localized: "PreviewCreationFailureNotificationBody %@", comment: "Notification body for preview creation failure"), inputFolderName)
+                content.title = String(
+                    localized: "PreviewCreationSuccessNotificationTitle",
+                    comment: "Notification title for preview creation success")
+                content.subtitle = String(
+                    format: String(
+                        localized: "PreviewCreationSuccessNotificationBody %@",
+                        comment: "Notification body for preview creation success"),
+                    inputFolderName)
+            } else {
+                content.title = String(
+                    localized: "PreviewCreationFailureNotificationTitle",
+                    comment: "Notification title for preview creation failure")
+                content.subtitle = String(format:
+                                            String(
+                                                localized: "PreviewCreationFailureNotificationBody %@",
+                                                comment: "Notification body for preview creation failure"),
+                                          inputFolderName)
             }
         }
         
