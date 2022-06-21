@@ -12,7 +12,7 @@ import UserNotifications
 class AppDelegate: NSObject, NSApplicationDelegate {
     @AppStorage("userSuppressedQuitAlert") private var userSuppressedQuitAlert = false
     private var shouldAskBeforeQuitting = true
-    
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { success, error in
             if success {
@@ -22,12 +22,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-    
+
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         shouldAskBeforeQuitting = false
         return true
     }
-    
+
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         if shouldAskBeforeQuitting, !userSuppressedQuitAlert {
             let alert = NSAlert()
@@ -37,15 +37,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             alert.addButton(withTitle: String(localized: "Quit", comment: "Button: Quits app"))
             alert.addButton(withTitle: String(localized: "Cancel", comment: "General purpose cancel button"))
             alert.showsSuppressionButton = true
-            
+
             let response = alert.runModal()
-            
+
             if let suppressionResponse = alert.suppressionButton?.state {
                 if suppressionResponse == NSControl.StateValue.on {
                     userSuppressedQuitAlert = true
                 }
             }
-            
+
             if response == .alertSecondButtonReturn {
                 return .terminateCancel
             }

@@ -10,12 +10,12 @@ import SwiftUI
 struct ToggleWithSpacing: View {
     let title: String
     @Binding var isOn: Bool
-    
+
     init(_ title: String, isOn: Binding<Bool>) {
         self.title = title
         self._isOn = isOn
     }
-    
+
     var body: some View {
         HStack {
             Text(title)

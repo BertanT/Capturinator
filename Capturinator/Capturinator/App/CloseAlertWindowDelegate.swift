@@ -10,7 +10,7 @@ import SwiftUI
 
 class CloseAlertWindowDelegate: NSObject, NSWindowDelegate {
     @AppStorage("userSuppressedWindowCloseAlert") private var userSuppressedWindowCloseAlert = false
-    
+
     func windowShouldClose(_ sender: NSWindow) -> Bool {
         if !userSuppressedWindowCloseAlert {
             let alert = NSAlert()
@@ -20,15 +20,15 @@ class CloseAlertWindowDelegate: NSObject, NSWindowDelegate {
             alert.addButton(withTitle: NSLocalizedString("Close", comment: "Button: Closes window"))
             alert.addButton(withTitle: String(localized: "Cancel"))
             alert.showsSuppressionButton = true
-            
+
             let response = alert.runModal()
-            
+
             if let suppressionResponse = alert.suppressionButton?.state {
                 if suppressionResponse == NSControl.StateValue.on {
                     userSuppressedWindowCloseAlert = true
                 }
             }
-            
+
             if response == .alertSecondButtonReturn {
                 return false
             }

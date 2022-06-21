@@ -17,14 +17,14 @@ class CompatibilityChecker {
         }
         return false
     }
-    
+
     private func supportsRayTracing() -> Bool {
         for device in MTLCopyAllDevices() where device.supportsRaytracing {
             return true
         }
         return false
     }
-    
+
     func checkObjectCaptureSupport() -> Bool {
         return supportsObjectReconstruction() && supportsRayTracing()
     }

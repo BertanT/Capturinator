@@ -14,16 +14,16 @@ class NotFocusableSCNView: SCNView {
 
 struct ModelViewer: NSViewRepresentable {
     private var modelURL: URL
-    
+
     init(modelURL: URL) {
         self.modelURL = modelURL
     }
-    
+
     func makeNSView(context: Context) -> SCNView {
         let scnView = NotFocusableSCNView()
         return scnView
     }
-    
+
     func updateNSView(_ scnView: SCNView, context: Context) {
         let scene = try? SCNScene(url: modelURL)
         scene?.background.contents = NSColor.clear
@@ -32,7 +32,7 @@ struct ModelViewer: NSViewRepresentable {
         scnView.autoenablesDefaultLighting = true
         scnView.backgroundColor = NSColor.clear
     }
-    
+
 }
 
 struct ModelViewer_Previews: PreviewProvider {

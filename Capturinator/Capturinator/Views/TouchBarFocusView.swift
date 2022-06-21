@@ -16,7 +16,7 @@ struct TouchBarFocusView: NSViewRepresentable {
     func makeNSView(context: Context) -> some NSView {
         return NSFocusView()
     }
-    
+
     func updateNSView(_ nsView: NSViewType, context: Context) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             if let window = nsView.window {

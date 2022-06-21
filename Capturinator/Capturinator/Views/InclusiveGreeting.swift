@@ -19,14 +19,14 @@ public struct InclusiveGreeting: View {
                          "\u{1F44B}\u{1F3FD}", "\u{1F44B}\u{1F3FE}", "\u{1F44B}\u{1F3FF}"]
     // This timer will make sure the hands will switch periodically
     private let timer: Publishers.Autoconnect<Timer.TimerPublisher>
-    
+
     public init(greetingMessage: String, gradient: Gradient, cycleDelay: Double = 3) {
         self.greetingMessage = greetingMessage
         self.gradient = gradient
         self.cycleDelay = cycleDelay
         timer = Timer.publish(every: cycleDelay, on: .main, in: .common).autoconnect()
     }
-    
+
     public var body: some View {
         HStack {
             Text(currentHand)

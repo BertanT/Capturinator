@@ -61,7 +61,7 @@ struct OnboardingView: View {
                         localized: "OpenSourceBody",
                         comment: "Onboarding screen text under open source"),
                     systemImage: "chevron.left.forwardslash.chevron.right")
-                
+
             }
             .fixedSize(horizontal: false, vertical: true)
             .padding(.top)

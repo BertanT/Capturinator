@@ -11,7 +11,7 @@ struct TitleLabel: View {
     let title: String
     let systemImage: String
     let gradient: Gradient
-    
+
     var body: some View {
         HStack {
             Image(systemName: systemImage)

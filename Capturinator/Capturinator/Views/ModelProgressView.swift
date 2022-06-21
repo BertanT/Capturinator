@@ -10,9 +10,9 @@ import SwiftUI
 struct ModelProgressView: View {
     @EnvironmentObject private var sharedData: SharedData
     var cancelAction: () -> Void
-    
+
     enum PresentationState { case hidden, initializing, bar, copying, finished }
-    
+
     var body: some View {
         Group {
             switch sharedData.modelProgressViewState {
@@ -26,7 +26,7 @@ struct ModelProgressView: View {
                         .roundedFont(.title3)
                     Spacer()
                 }
-                
+
             case .bar:
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading, spacing: 5.0) {
@@ -35,7 +35,7 @@ struct ModelProgressView: View {
                             comment: "Text: Shows model creation progress in progress bar")
                         .bold()
                         .roundedFont(.body)
-                        
+
                         ProgressView(value: sharedData.modelProcessingProgress, total: 1)
                     }
                     Button(action: cancelAction) {
@@ -82,7 +82,7 @@ struct ModelProgressView: View {
                             comment: "Button: Hides the progress bar before it automatically hides after successful export"))
                     .buttonStyle(BorderlessButtonStyle())
                 }
-                
+
             }
         }
         .zIndex(1)
