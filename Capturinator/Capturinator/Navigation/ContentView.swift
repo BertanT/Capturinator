@@ -15,9 +15,9 @@ struct ContentView: View {
     @EnvironmentObject private var sharedData: SharedData
     @State private var photogrammetrySession: PhotogrammetrySession?
     @State private var showingCancelAlert = false
-    
+
     var body: some View {
-        
+
         NavigationView {
             Sidebar(photogrammetrySession: $photogrammetrySession)
                 .frame(minWidth: 300, maxWidth: .infinity, maxHeight: .infinity)
@@ -47,7 +47,7 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            
+
         }
         .onExitCommand {
             if photogrammetrySession?.isProcessing ?? false {
@@ -87,7 +87,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     func toggleSidebar() {
         NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
     }

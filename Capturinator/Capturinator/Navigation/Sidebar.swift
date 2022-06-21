@@ -13,32 +13,32 @@ import UserNotifications
 struct Sidebar: View {
     typealias PSConfig = PhotogrammetrySession.Configuration
     typealias PSRequestDetail = PhotogrammetrySession.Request.Detail
-    
+
     @State private var processingErrorOccurred = false
-    
+
     @EnvironmentObject private var sharedData: SharedData
     @Binding var photogrammetrySession: PhotogrammetrySession?
-    
+
     @State private var showingAlert = false
-    
+
     @State private var usingSequentialSamples = false
     @State private var objectMasking = true
     @State private var highFeatureSensivity = false
-    
+
     @State private var alertText = "" {
         didSet { showingAlert.toggle() }
     }
-    
+
     @State private var inputFolderURL: URL?
     @State var psConfig = PhotogrammetrySession.Configuration()
     @State private var requestDetail: PSRequestDetail = .medium
     @State private var psProcessTask: Task<(), Never>?
-    
+
     @FocusState private var isFocused: Bool
-    
+
     enum TouchBarState { case main, settings, quality }
     @State private var touchBarState: TouchBarState = .main
-    
+
     var body: some View {
         VStack {
             // Tocuh Bar! This view is not visible
@@ -54,7 +54,7 @@ struct Sidebar: View {
                                         localized: "OpenFolder",
                                         comment: "Button[TouchBar]: Opens image folder"), systemImage: "folder.fill")
                                 }
-                                Button{
+                                Button {
                                     touchBarState = .settings
                                 } label: {
                                     Label(String(localized:
@@ -120,7 +120,7 @@ struct Sidebar: View {
                                         .font(.title)
                                 }
                                 .buttonStyle(.borderless)
-                                
+
                                 Button {
                                     requestDetail = .reduced
                                 } label: {
@@ -132,7 +132,7 @@ struct Sidebar: View {
                                         systemImage: "square.grid.2x2",
                                         checked: requestDetail == .reduced)
                                 }
-                                
+
                                 Button {
                                     requestDetail = .medium
                                 } label: {
@@ -144,7 +144,7 @@ struct Sidebar: View {
                                         systemImage: "square.grid.2x2.fill",
                                         checked: requestDetail == .medium)
                                 }
-                                
+
                                 Button {
                                     requestDetail = .full
                                 } label: {
@@ -156,7 +156,7 @@ struct Sidebar: View {
                                         systemImage: "square.grid.3x2",
                                         checked: requestDetail == .full)
                                 }
-                                
+
                                 Button {
                                     requestDetail = .raw
                                 } label: {
@@ -181,7 +181,7 @@ struct Sidebar: View {
                 .multilineTextAlignment(.center)
                 .padding([.horizontal, .bottom])
                 .offset(y: 10)
-            
+
             VStack(alignment: .leading) {
                 Divider()
                     .padding(.bottom, 5)
@@ -224,15 +224,15 @@ struct Sidebar: View {
                     .padding(0)
                 }
                 .disabled(photogrammetrySession?.isProcessing ?? false)
-                
+
                 Divider()
                     .padding(.vertical, 5)
-                
+
                 Group {
                     TitleLabel(
                         title: String(localized: "ModelSettings", comment: "Model Settings title in the sidebar"),
                         systemImage: "slider.horizontal.3", gradient: .yellowGradient)
-                    
+
                     ToggleWithSpacing(String(localized: "SequentialSamples"), isOn: $usingSequentialSamples)
                         .onChange(of: usingSequentialSamples) { newValue in
                             psConfig.sampleOrdering = newValue ? .sequential : .unordered
@@ -246,7 +246,7 @@ struct Sidebar: View {
                                 String(
                                     localized: "SequentialSamplesHelpBody",
                                     comment: "Help popover body for sequential samples"))
-                    
+
                     ToggleWithSpacing(String(localized: "ObjectMasking"), isOn: $objectMasking)
                         .onChange(of: objectMasking) { newValue in
                             psConfig.isObjectMaskingEnabled = newValue
@@ -260,7 +260,7 @@ struct Sidebar: View {
                                 String(
                                     localized: "ObjectMaskingHelpBody",
                                     comment: "Help popover body for object masking"))
-                    
+
                     ToggleWithSpacing(String(localized: "HighFeatureSensitivity"), isOn: $highFeatureSensivity)
                         .onChange(of: highFeatureSensivity) { newValue in
                             psConfig.featureSensitivity = newValue ? .high : .normal
@@ -274,13 +274,13 @@ struct Sidebar: View {
                                 String(
                                     localized: "HighFeatureSensitivityHelpBody",
                                     comment: "Help popover body for high feature sensitivity"))
-                    
+
                     Picker(String(localized: "ModelQuality", comment: "Picker: Sets the model quality"), selection: $requestDetail) {
                         Text("RAW").tag(PSRequestDetail.raw)
                         Text("Full").tag(PSRequestDetail.full)
                         Text("Medium").tag(PSRequestDetail.medium)
                         Text("Reduced").tag(PSRequestDetail.reduced)
-                        
+
                     }
                     .roundedFont(.headline)
                     .helpPopover(
@@ -294,9 +294,9 @@ struct Sidebar: View {
                                 comment: "Help popover title for model quality"))
                 }
                 .disabled(photogrammetrySession?.isProcessing ?? false)
-                
+
                 Spacer()
-                
+
                 Divider()
                     .padding(.vertical, 5)
                 Group {
@@ -333,7 +333,7 @@ struct Sidebar: View {
                 message: Text(alertText), dismissButton: nil)
         }
     }
-    
+
     private func openFolder() {
         let openPanel = NSOpenPanel()
         openPanel.canChooseDirectories = true
@@ -343,7 +343,7 @@ struct Sidebar: View {
             print("Source folder selected: \(openPanel.url!)")
         }
     }
-    
+
     private func chooseSaveDestination() -> URL? {
         let savePanel = NSSavePanel()
         savePanel.title = String(localized: "SavePanelTitle", comment: "Title for the save panel shown before exporting model")
@@ -355,10 +355,10 @@ struct Sidebar: View {
         }
         return nil
     }
-    
+
     private func createModel(permanent: URL? = nil) {
         processingErrorOccurred = false
-        
+
         guard let inputURL = inputFolderURL else {
             print("inputFolderURL is nil! Aborting...")
             processingErrorOccurred = true
@@ -366,7 +366,7 @@ struct Sidebar: View {
                                comment: "Alert body for no source folder found error")
             return
         }
-        
+
         do {
             photogrammetrySession = try PhotogrammetrySession(input: inputURL, configuration: psConfig)
         } catch {
@@ -377,10 +377,10 @@ struct Sidebar: View {
                                comment: "Alert body for photogrammetry session creation error")
             return
         }
-        
+
         let temporarySaveURL = ModelFileManager().generateTempModelURL(appropriateFor: permanent)
         let request = PhotogrammetrySession.Request.modelFile(url: temporarySaveURL, detail: permanent == nil ? .preview : requestDetail)
-        
+
         Task(priority: .userInitiated) {
             do {
                 for try await output in photogrammetrySession!.outputs {
@@ -424,12 +424,12 @@ struct Sidebar: View {
                                    comment: "Alert body for unexpected fatal session error")
             }
         }
-        
+
         do {
             withAnimation {
                 sharedData.modelProgressViewState = .initializing
             }
-            
+
             try photogrammetrySession!.process(requests: [request])
         } catch {
             print("Cannot process requests. ERROR=\(error)")
@@ -440,19 +440,19 @@ struct Sidebar: View {
                 sharedData.modelProgressViewState = .hidden
             }
         }
-        
+
     }
-    
+
     private func createPreview() {
         createModel()
     }
-    
+
     private func exportModel() {
         if let destinationURL = chooseSaveDestination() {
             createModel(permanent: destinationURL)
         }
     }
-    
+
     private func handleCreationCompletion(temporaryLocation: URL, permenantSaveURL: URL? = nil) {
         if processingErrorOccurred {
             withAnimation {
@@ -461,19 +461,19 @@ struct Sidebar: View {
             sendCreationConclusionNotification(success: false, exportedModelFilename: permenantSaveURL?.lastPathComponent)
             return
         }
-        
+
         let modelFileManager = ModelFileManager()
-        
+
         let oldModelURL = sharedData.modelViewerModelURL
-        
+
         withAnimation {
             sharedData.modelViewerModelURL = temporaryLocation
         }
-        
+
         if let oldURL = oldModelURL {
             try? modelFileManager.removeTempModel(modelURL: oldURL)
         }
-        
+
         if let saveURL = permenantSaveURL {
             sharedData.modelProgressViewState = .copying
             do {
@@ -491,10 +491,10 @@ struct Sidebar: View {
         }
         sendCreationConclusionNotification(success: true, exportedModelFilename: permenantSaveURL?.lastPathComponent)
     }
-    
+
     private func sendCreationConclusionNotification(success: Bool, exportedModelFilename: String?) {
         let content = UNMutableNotificationContent()
-        
+
         if let filename = exportedModelFilename {
             if success {
                 content.title = String(
@@ -536,7 +536,7 @@ struct Sidebar: View {
                                           inputFolderName)
             }
         }
-        
+
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
         UNUserNotificationCenter.current().add(request)
     }

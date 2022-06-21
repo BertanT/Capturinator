@@ -14,13 +14,13 @@ class ModelFileManager {
             appropriateFor: appropriateFor, create: true)
         return tempFolderURL ?? URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
     }
-    
+
     func generateTempModelURL(appropriateFor: URL? = nil) -> URL {
         let directoryURL = tempFolderURL(appropriateFor: appropriateFor)
         let tempFileURL = directoryURL.appendingPathComponent(UUID().uuidString).appendingPathExtension("usdz")
         return tempFileURL
     }
-    
+
     func copyTempModel(tempModelURL: URL, permanentURL: URL) throws {
         let fileManager = FileManager.default
         if fileManager.fileExists(atPath: permanentURL.path) {
@@ -28,7 +28,7 @@ class ModelFileManager {
         }
         try fileManager.copyItem(at: tempModelURL, to: permanentURL)
     }
-    
+
     func removeTempModel(modelURL: URL) throws {
         try FileManager.default.removeItem(at: modelURL)
     }

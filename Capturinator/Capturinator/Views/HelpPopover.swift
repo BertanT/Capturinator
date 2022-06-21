@@ -48,4 +48,3 @@ struct HelpPopover_Previews: PreviewProvider {
                     description: "This is the SwiftUI preview for the help popover view I've created")
     }
 }
-

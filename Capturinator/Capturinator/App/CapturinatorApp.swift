@@ -14,7 +14,7 @@ struct Capturinator: App {
     @AppStorage("onboardingShown") private var onboardingShown = false
     @State private var showingOnboarding = false
     var supportsObjectCapture = CompatibilityChecker().checkObjectCaptureSupport()
-    
+
     var body: some Scene {
         WindowGroup {
             if supportsObjectCapture {
@@ -29,7 +29,7 @@ struct Capturinator: App {
                     }
                     .sheet(isPresented: $showingOnboarding) {
                         OnboardingView()
-                        
+
                     }
             } else {
                 NotSupportedView()
@@ -57,7 +57,7 @@ struct Capturinator: App {
                             NSApplication.AboutPanelOptionKey(rawValue: "Copyright"):
                                 Bundle.main.object(forInfoDictionaryKey: "NSHumanReadableCopyright") ?? ""
                         ])
-                    
+
                 }
             }
             CommandGroup(replacing: .help) {
