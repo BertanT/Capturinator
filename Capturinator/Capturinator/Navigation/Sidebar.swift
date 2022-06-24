@@ -23,7 +23,7 @@ struct Sidebar: View {
 
     @State private var usingSequentialSamples = false
     @State private var objectMasking = true
-    @State private var highFeatureSensivity = false
+    @State private var highFeatureSensitivity = false
 
     @State private var alertText = "" {
         didSet { showingAlert.toggle() }
@@ -109,7 +109,7 @@ struct Sidebar: View {
                                     String(
                                         localized: "HighFeatureSensitivityShortened",
                                         comment: "Toggle[TouchBar]: Sets high feature sensitivity option"),
-                                    isOn: $highFeatureSensivity)
+                                    isOn: $highFeatureSensitivity)
                             case .quality:
                                 Button {
                                     withAnimation {
@@ -261,8 +261,8 @@ struct Sidebar: View {
                                     localized: "ObjectMaskingHelpBody",
                                     comment: "Help popover body for object masking"))
 
-                    ToggleWithSpacing(String(localized: "HighFeatureSensitivity"), isOn: $highFeatureSensivity)
-                        .onChange(of: highFeatureSensivity) { newValue in
+                    ToggleWithSpacing(String(localized: "HighFeatureSensitivity"), isOn: $highFeatureSensitivity)
+                        .onChange(of: highFeatureSensitivity) { newValue in
                             psConfig.featureSensitivity = newValue ? .high : .normal
                         }
                         .helpPopover(

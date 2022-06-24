@@ -14,9 +14,11 @@ class NotFocusableSCNView: SCNView {
 
 struct ModelViewer: NSViewRepresentable {
     private var modelURL: URL
+    @Binding private var shouldResetCamera: Bool
 
-    init(modelURL: URL) {
+    init(modelURL: URL, shouldResetCamera: Binding<Bool>) {
         self.modelURL = modelURL
+        self._shouldResetCamera = shouldResetCamera
     }
 
     func makeNSView(context: Context) -> SCNView {
@@ -31,12 +33,16 @@ struct ModelViewer: NSViewRepresentable {
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
         scnView.backgroundColor = NSColor.clear
-    }
 
-}
+        // Reset cam position if the reset variable is triggered
+        if shouldResetCamera {
+            SCNTransaction.begin()
+            scnView.pointOfView?.position = SCNVector3(x: 5, y: 0, z: 5)
+            scnView.pointOfView?.orientation = SCNVector4(x: 0, y: 1, z: 0, w: .pi/4)
+            SCNTransaction.commit()
+            shouldResetCamera = false
 
-struct ModelViewer_Previews: PreviewProvider {
-    static var previews: some View {
-        ModelViewer(modelURL: Bundle.main.url(forResource: "plane", withExtension: "usdz")!)
+        }
+
     }
 }

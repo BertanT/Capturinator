@@ -67,6 +67,9 @@
 /* Toggle[TouchBar]: Sets high feature sensitivity option */
 "HighFeatureSensitivityShortened" = "Yük. Detay Hassasiyeti";
 
+/* Button: Resets 3D model preview position */
+"HomeView" = "Home View";
+
 /* Image folder title in the sidebar */
 "ImageFolder" = "Fotoğraf Klasörü";
 
