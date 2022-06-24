@@ -14,6 +14,7 @@ import RealityKit
 struct ContentView: View {
     @EnvironmentObject private var sharedData: SharedData
     @State private var photogrammetrySession: PhotogrammetrySession?
+    @State private var shouldResetCamera = false
     @State private var showingCancelAlert = false
 
     var body: some View {
@@ -30,7 +31,7 @@ struct ContentView: View {
                 VisualEffectView(material: .sidebar, blendingMode: .behindWindow)
                 Group {
                     if let modelURL = sharedData.modelViewerModelURL {
-                        ModelViewer(modelURL: modelURL)
+                        ModelViewer(modelURL: modelURL, shouldResetCamera: $shouldResetCamera)
                     } else {
                         Label(String(
                             localized: "NoModelToViewMessage",
@@ -45,9 +46,6 @@ struct ContentView: View {
                 .environmentObject(sharedData)
                 .padding()
             }
-        }
-        .onAppear {
-
         }
         .onExitCommand {
             if photogrammetrySession?.isProcessing ?? false {
@@ -83,6 +81,17 @@ struct ContentView: View {
                             localized: "ToggleSidebar",
                             comment: "Button: Toggles Sidebar"),
                         systemImage: "sidebar.left")
+                }
+            }
+            ToolbarItem(placement: .automatic) {
+                Button(action: {
+                    shouldResetCamera = true
+                }) {
+                    Label(
+                        String(
+                            localized: "HomeView",
+                            comment: "Button: Resets 3D model preview position"),
+                        systemImage: "house")
                 }
             }
         }
