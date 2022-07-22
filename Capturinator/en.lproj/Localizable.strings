@@ -37,6 +37,9 @@
 /* Button: Creates and exports model */
 "ExportModel" = "Export Model";
 
+/* Button[TouchBar]: Creates and exports model */
+"ExportModelShortenedShortened" = "Export Model";
+
 /* Button: Shows the onboarding screen */
 "GettingStartedMenuCommandTittle" = "Getting Started Guide";
 
@@ -53,7 +56,7 @@
 "HighFeatureSensitivityShortened" = "High Feature Sensitivity";
 
 /* Button: Resets 3D model preview position */
-"HomeView" = "Home View";
+"HomeView" = "Center Model";
 
 /* Image folder title in the sidebar */
 "ImageFolder" = "Image Folder";
@@ -140,7 +143,7 @@
 "OpenSource" = "Open Source";
 
 /* Onboarding screen text under open source */
-"OpenSourceBody" = "This app is open-source under the MIT license. I'm a 16-year-old developer and a lover of all things tech. You can check out and contribute to my projects on [my GitHub profile](http://github.com/bertant). Thanks for using the app!";
+"OpenSourceBody" = "This app is open-source under the MIT license. I'm a 17-year-old developer and a lover of all things tech. You can check out and contribute to my projects on [my GitHub profile](http://github.com/bertant). Thanks for using the app!";
 
 /* Notification body for preview creation failure */
 "PreviewCreationFailureNotificationBody %@" = "Could not create the preview for the source folder: \"%@\".";

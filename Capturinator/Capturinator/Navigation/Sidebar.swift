@@ -41,7 +41,7 @@ struct Sidebar: View {
 
     var body: some View {
         VStack {
-            // Tocuh Bar! This view is not visible
+            // Touch Bar! This view is not visible
             TouchBarFocusView()
                 .frame(width: 0, height: 0)
                 .touchBar(
@@ -79,8 +79,8 @@ struct Sidebar: View {
                                     }
                                     Button { exportModel() } label: {
                                         Label(String(
-                                            localized: "ExportModel",
-                                            comment: "Button: Creates and exports model"), systemImage: "arkit")
+                                            localized: "ExportModelShortenedShortened",
+                                            comment: "Button[TouchBar]: Creates and exports model"), systemImage: "arkit")
                                     }
                                     .buttonStyle(.borderedProminent)
                                 }
