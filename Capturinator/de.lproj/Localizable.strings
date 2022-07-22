@@ -1,0 +1,267 @@
+/* Button: Shows the about this app window */
+"AboutMenuCommandTitle" = "Über den Capturinator";
+
+/* Short description of the app */
+"AboutWindowText" = "Erstelle mit den Fotos 3D Modelle!";
+
+/* Short app info under the welcome text in the sidebar */
+"AppInfo" = "Transformieren Sie die Fotos von Objekten zu AR-Projekten und 3D USDZ-Modelle und mehr! Um zu beginnen wählen sie ein Fotoordner aus.";
+
+/* General purpose cancel button */
+"Cancel" = "Abbrechen";
+
+/* Chnages the selected image folder */
+"Change" = "Austauschen ";
+
+/* Button: Closes window */
+"Close" = "Schließen";
+
+/* Body of the window closing confirmation dialog */
+"CloseWindowAlertBody" = "Alle Abläufe in diesem Fenster werden beendet und alle Veränderungen gehen verloren. \n";
+
+/* Title of the window closing confirmation dialog */
+"CloseWindowAlertTitle" = "Soll dieses Fenster geschlossen werden?";
+
+/* Onboarding screen subtitle */
+"Create" = "Erstelle ein Model!";
+
+/* Onboarding screen text under create */
+"CreateBody" = "Personalisieren Sie die Einstellungen, betrachten Sie die Vorschau und importieren Sie das Modell! Wen Hilfe für irgendeine Auswahl gebraucht wird, klicken Sie für die Hilfe auf das Fragezeichen nebenan.  ";
+
+/* Creates a preview model */
+"CreatePreview" = "Voransicht";
+
+/* Text: Shows model creation progress in progress bar */
+"CreatingModel %lld" = "Das Modell wird erstellt: %lld%%";
+
+/* Default filename while saving the model */
+"DefaultExportFilename" = "Mein Modell";
+
+/* Button: Hides the progress bar before it automatically hides after successful export */
+"Dismiss" = "Ausblenden";
+
+/* Title for generic error alert */
+"ErrorAlertTitle" = "Etwas ist schief gelaufen";
+
+/* Text: Shown in progress bar after a model has been successfully exported */
+"ExportComplete %@" = "%@ wurde erfolgreich exportiert!";
+
+/* Button: Creates and exports model */
+"ExportModel" = "Modell Exportieren";
+
+/* Button[TouchBar]: Creates and exports model */
+"ExportModelShortenedShortened" = "Modell Expo.";
+
+/* Full model quality */
+"Full" = "Hoch";
+
+/* Button: Shows the onboarding screen */
+"GettingStartedMenuCommandTittle" = "Handbuch";
+
+/* Toggle: Sets high feature sensitivity option */
+"HighFeatureSensitivity" = "Hohe Detailsensibilität";
+
+/* Help popover body for high feature sensitivity */
+"HighFeatureSensitivityHelpBody" = "Falls Ihr Ausgangsfoto außer dem Focus ist oder geringen Kontrast besitzt oder das gescannte Objekt Einfarbig ist oder zu geringe Oberflächendetails besitzt, dann aktivieren Sie diese Eigenschaft. Die Prozedur wir länger dauern aber diese Eigenschaft wird zu einem besseren Ergebnis führen.";
+
+/* Help popover title for high feature sensitivity */
+"HighFeatureSensitivityHelpTitle" = "Über die hohe Detailsensibilität";
+
+/* Toggle[TouchBar]: Sets high feature sensitivity option */
+"HighFeatureSensitivityShortened" = "Hohe Detailsensibilität";
+
+/* Button: Resets 3D model preview position */
+"HomeView" = "Zentriere das Modell";
+
+/* Image folder title in the sidebar */
+"ImageFolder" = "Fotoordner";
+
+/* Help popover body for image folder */
+"ImageFolderHelpBody" = "Dieser Ordner beinhaltet die Fotos, die Sie zu 3D Modelle umwandeln möchten.";
+
+/* Help popover title for image folder */
+"ImageFolderHelpTitle" = "Über den Fotoordner";
+
+/* Onboarding screen subtitle */
+"ImportPhotos" = "Importiere die Fotos";
+
+/* Onboarding screen text under import photos */
+"ImportPhotosBody" = "Senden sie alle aufgenommenen Fotos in einen Ordner. Dieser Ordner darf nichts anderes als nur Ihre Fotos beinhalten.";
+
+/* Starting model creation */
+"Initializing" = "Es beginnt…";
+
+/* Message to be displayed at about this app window and onboarding screen */
+"MadeWithLove" = "Wurde von Bertan mit ❤️ und Hingabe entwickelt.";
+
+/* Medium model quality */
+"Medium" = "Mittel";
+
+/* Alert body for model creation error */
+"ModelCreationErrorAlertBody" = "Es ist ein Fehler beim erstellen des Modells entstanden. Bitte überprüfen Sie die Gültigkeit Ihrer Ausgangsfotos.";
+
+/* Notification body for model export failure */
+"ModelExportFailureNotificationBody %@" = "\"%@\" Es ist ein Fehler beim exportieren entstanden.";
+
+/* Notification title for model export failure */
+"ModelExportFailureNotificationTitle" = "❌ Das Modell konnte nicht exportiert werden.";
+
+/* Notification body for model export success */
+"ModelExportSuccessNotificationBody %@" = "\"%@\" Es wurde erfolgreich exportiert.";
+
+/* Notification title for model export success */
+"ModelExportSuccessNotificationTitle" = "😄 Das Modell wurde exportiert!";
+
+/* Picker: Sets the model quality */
+"ModelQuality" = "Qualität des Modells";
+
+/* Help popover title for model quality */
+"ModelQualityHelpBody" = "Wählen sie die Qualität und die Details des Modells aus. Vergessen sie nicht, dass bei der Erhöhung der Qualität der Speicherplatz und die Bearbeitungsdauer Ihres Modells zunimmt. ";
+
+/* Help popover title for model quality */
+"ModelQualityHelpTitle" = "Über die Modellqualität";
+
+/* Alert body for model save */
+"ModelSaveErrorAlertBody" = "Es ist ein Problem beim speichern des Modells aufgetreten.";
+
+/* Model Settings title in the sidebar */
+"ModelSettings" = "Modell Einstellungen";
+
+/* Label: Viewed as a placeholder when there is no model in the model viewer */
+"NoModelToViewMessage" = "Um es hier darzustellen Vorschau erstellen oder Modell exportieren!";
+
+/* Alert body for no source folder found error */
+"NoSourceFolderErrorAlertBody" = "Der Ausgangsordner wurde nicht gefunden - dies kann ein Software Fehler sein.";
+
+/* Image folder name placeholder when not selected */
+"NotSelected" = "Wurde nicht ausgewählt";
+
+/* Label: Shown in the main window if the user's device does not support Object Capture, more info about compatibility issue. */
+"ObjectCaptureNotSupportedDescription" = "Um diese App zu benutzen benötigt man einen Apple Silicon Prozessor oder einen Mac Computer mit Intel Prozessor und einen sehr straken Grafikprozessor. [Für mehr Informationen...](http://www.capturinator.bertan.codes/support/system-requirements)";
+
+/* Label: Shown in the main window if the user's device does not support Object Capture. */
+"ObjectCaptureNotSupportedTitle" = "Leider unterstützt Ihr Gerät die Objekt Erfassungstechnologie nicht.";
+
+/* Toggle: Sets Object masking option */
+"ObjectMasking" = "Objektmaskierung";
+
+/* Help popover body for object masking */
+"ObjectMaskingHelpBody" = "Die Objektmaskierung  versucht für die Erstellung eines besseren Modells und für die Erhöhung der Leistung, von dem gescannten Objekt die  Gegenstände (Pflanzen, Gebäuden usw.) die nicht zu dem Objekt gehören, heraus zu filtern. ";
+
+/* Help popover title for object masking */
+"ObjectMaskingHelpTitle" = "Über die Objektmaskierung";
+
+/* Text: Greets the user for the first time on the onboarding screen */
+"OnboardingWelcome" = "Willkommen bei Capturinator!";
+
+/* Button: Opens image folder */
+"Open" = "Öffnen";
+
+/* Button[TouchBar]: Opens image folder */
+"OpenFolder" = "Ordner öffnen ";
+
+/* Onboarding screen subtitle */
+"OpenSource" = "Offene Quellen";
+
+/* Onboarding screen text under open source */
+"OpenSourceBody" = "Diese App ist unter der MIT Lizenz eine offene Quelle. Ich bin ein 17 Jahre alter Entwickler mit einer grossen Hingabe zur Technologie. Sie können meine Projekte unter [meinem GitHub Profil](http://github.com/bertant) betrachten und Ihren Beitrag dazu leisten. Danke, dass Sie die App nutzen!";
+
+/* Button[TouchBar]: Creates a preview model */
+"Preview" = "Voransicht";
+
+/* Notification body for preview creation failure */
+"PreviewCreationFailureNotificationBody %@" = "Es ist ein Problem bei der Erstellung der Voransicht für den Ausgangsordner „%@\"entstanden.";
+
+/* Notification title for preview creation failure */
+"PreviewCreationFailureNotificationTitle" = "❌ Voransicht konnte nicht erstellt werden";
+
+/* Notification body for preview creation success */
+"PreviewCreationSuccessNotificationBody %@" = "Für den Ausgangsordner „%@„ ist die Voransicht erfolgreich erstellt worden.";
+
+/* Notification title for preview creation success */
+"PreviewCreationSuccessNotificationTitle" = "😄 Voransicht ist bereit!";
+
+/* Alert body for photogrammetry session creation error */
+"PSCreationErrorAlertBody" = "Bei dem Beginn der Fotogrammetrie ist ein Fehler entstanden. Bitte seien sie sicher, dass die Ausgangsfotos gültig sind!";
+
+/* Button[TouchBar]: Shows Model Quality Picker Strip */
+"Quality" = "Qualität";
+
+/* Button: Quits app */
+"Quit" = " Verlassen";
+
+/* Body of the app termination confirmation dialog */
+"QuitAppAlertBody" = "Alle laufenden Prozesse werden gestoppt und alle Vorgänge werden verloren gehen. ";
+
+/* Title of the app termination confirmation dialog */
+"QuitAppAlertTitle" = "Jetzt Verlassen!";
+
+/* RAW model quality */
+"RAW" = "RAW!";
+
+/* The lowest model quality */
+"Reduced" = "Reduziert";
+
+/* Refines a preview model */
+"RefinePreview" = "Aktualisiere die Voransicht";
+
+/* Rendering title in the sidebar */
+"Rendering" = "Modell Erstellen";
+
+/* Title for the save panel shown before exporting model */
+"SavePanelTitle" = "Wählen Sie aus, wo sie Ihr Modell speichern möchten.";
+
+/* Text: Shown in progress bar while saving a finished model */
+"SavingModel" = "Das Modell wird gespeichert …";
+
+/* Toggle: Sets Sequential samples option */
+"SequentialSamples" = "Sequentielle Img.";
+
+/* Help popover body for sequential samples */
+"SequentialSamplesHelpBody" = "Falls die Images die Reihenfolge ihrer Aufnahme entsprechen, aktivieren Sie für die Steigerung der Leistungsfähigkeit diese Eigenschaft. Falls die Fotos keine bestimmte Reihenfolge haben schließen diese Eigenschaft. ";
+
+/* Help popover title for sequential samples */
+"SequentialSamplesHelpTitle" = "Über sequentielle Images ";
+
+/* Button[TouchBar]: Shows Model Settings Strip */
+"Settings" = "Einstellungen";
+
+/* Button: Shows the exported model in Finder */
+"ShowInFinder" = "Zeige es im Finder";
+
+/* Button: Dismisses the onboarding screen */
+"StartCreating" = "Beginne Erstellung!";
+
+/* Stop model creation */
+"Stop" = "Beenden";
+
+/* Button[Progress Bar]: Stops model creation */
+"StopCreating" = "Beende Modellierung";
+
+/* Body for the stop model creation confirmation dialog */
+"StopCreatingModelAlertBody" = "Sind Sie sicher, die Modellierung zu stoppen! Alle Progresse werden verloren gehen.";
+
+/* Title for the stop model creation confirmation dialog */
+"StopCreatingModelAlertTitle" = "Soll die Modellierung beendet werden?";
+
+/* Menu Command: Opens the Capturinator Support Website */
+"SupportMenuCommandTitle" = "Capturinator Unterstützung";
+
+/* Onboarding screen subtitle */
+"TakePhotos" = "Fotos aufnehmen";
+
+/* Onboarding screen text under take photos */
+"TakePhotosBody" = "Machen sie 30-200 sich überschneidende Aufnahmen aus allen Winkeln von dem Objekt (auch von oben und unten), dass Sie scannen möchten. Wenn möglich benützen Sie ein iPhone oder eine DSLR Camera mit Tiefenwahrnehmung.";
+
+/* Button: Toggles Sidebar */
+"ToggleSidebar" = "Aus-/Einblenden der Seitenleiste.";
+
+/* Alert body for unexpected fatal session error */
+"UnexpectedFatalSessionErrorAlertBody" = "Ein unerwartetes kritisches Problem mit der Fotogrammetrie ist aufgetaucht :(";
+
+/* Alert body for unexpected model creation error */
+"UnexpectedModelCreationErrorAlertBody" = "Bei der Erstellung des Models ist ein unerwartetes Problem entstanden.";
+
+/* Welcome text at the top of the sidebar */
+"Welcome" = "Willkommen! ";
+

@@ -67,9 +67,6 @@
 /* Toggle[TouchBar]: Sets high feature sensitivity option */
 "HighFeatureSensitivityShortened" = "Yük. Detay Hassasiyeti";
 
-/* Button: Resets 3D model preview position */
-"HomeView" = "Home View";
-
 /* Image folder title in the sidebar */
 "ImageFolder" = "Fotoğraf Klasörü";
 
@@ -161,7 +158,7 @@
 "OpenSource" = "Açık Kaynaklı";
 
 /* Onboarding screen text under open source */
-"OpenSourceBody" = "Bu uygulama MIT lisansı kapsamında açık kaynaklıdır. Ben derin bir teknoloji tutkusuna sahip 16 yaşındaki bir geliştiriciyim. [GitHub profilim](http://github.com/bertant) üzerinden projelerime göz atabilir, ve katkıda bulanabilirsiniz. Uygulamayı kullandığınız için teşekkürler!";
+"OpenSourceBody" = "Bu uygulama MIT lisansı kapsamında açık kaynaklıdır. Ben derin bir teknoloji tutkusuna sahip 17 yaşındaki bir geliştiriciyim. [GitHub profilim](http://github.com/bertant) üzerinden projelerime göz atabilir, ve katkıda bulanabilirsiniz. Uygulamayı kullandığınız için teşekkürler!";
 
 /* Button[TouchBar]: Creates a preview model */
 "Preview" = "Önizleme";
